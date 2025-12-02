@@ -16,7 +16,7 @@ export default function Home() {
       },
       hero: {
         title1: 'Heben Sie Ihre Marke',
-        title2: 'Mit Kreativer Exzellenz',
+        title2: 'Mit kreativer Exzellenz',
         description: 'Wir erwecken Ihre Vision zum Leben mit atemberaubenden Websites, auffälligen Flyern und professionellen Marketingmaterialien, die Ihr Unternehmen hervorheben.',
         getStarted: 'Jetzt starten',
         ourServices: 'Unsere Dienstleistungen'
@@ -74,7 +74,7 @@ export default function Home() {
       },
       hero: {
         title1: 'Elevate Your Brand',
-        title2: 'With Creative Excellence',
+        title2: 'With creative Excellence',
         description: 'We bring your vision to life with stunning websites, eye-catching flyers, and professional marketing materials that make your business stand out.',
         getStarted: 'Get Started',
         ourServices: 'Our Services'
