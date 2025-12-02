@@ -245,7 +245,7 @@ export default function Home() {
               className="w-full h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]"
               ref={(video) => {
                 if (video) {
-                  video.playbackRate = 2.5;
+                  video.playbackRate = 1.0;
                 }
               }}
             >
