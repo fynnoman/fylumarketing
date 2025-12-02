@@ -249,7 +249,7 @@ export default function Home() {
                 }
               }}
             >
-              <source src="/video.mp4" type="video/mp4" />
+              <source src="/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute -bottom-6 -right-6 w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-6 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
@@ -259,7 +259,7 @@ export default function Home() {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
                   <span className="font-semibold text-gray-800">{t.pricing.basic}</span>
-                  <span className="text-sm font-semibold text-gray-600">€400</span>
+                  <span className="text-sm font-semibold text-gray-600">€450</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
                   <span className="font-semibold text-gray-800">{t.pricing.pro}</span>
