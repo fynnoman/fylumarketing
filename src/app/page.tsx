@@ -74,7 +74,7 @@ export default function Home() {
       },
       hero: {
         title1: 'Elevate Your Brand',
-        title2: 'With creative Excellence',
+        title2: 'With creative excellence',
         description: 'We bring your vision to life with stunning websites, eye-catching flyers, and professional marketing materials that make your business stand out.',
         getStarted: 'Get Started',
         ourServices: 'Our Services'
