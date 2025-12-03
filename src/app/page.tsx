@@ -244,15 +244,15 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-blue-50">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-0.5 flex justify-between items-center">
-          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={150} height={35} />
-          <div className="flex gap-6 items-center">
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer">{t.nav.services}</button>
-            <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300">{t.nav.about}</a>
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 md:py-0.5 flex justify-between items-center">
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={100} height={25} className="md:w-[150px] md:h-[35px]" />
+          <div className="flex gap-3 md:gap-6 items-center text-xs md:text-base">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer hidden sm:block">{t.nav.services}</button>
+            <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hidden sm:block">{t.nav.about}</a>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer">{t.nav.contact}</button>
             <button 
               onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
-              className="ml-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="ml-2 md:ml-4 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-xs md:text-base"
             >
               {language === 'de' ? 'DE' : 'EN'}
             </button>
@@ -261,29 +261,29 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in-up">
-            <h2 className="text-6xl font-bold leading-tight">
+      <section className="min-h-screen flex items-center justify-center px-4 md:px-6 pt-24 md:pt-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-6 md:space-y-8 animate-fade-in-up">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
                 {t.hero.title1}
               </span>
               <br />
               <span className="text-gray-800">{t.hero.title2}</span>
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-base md:text-xl text-gray-600 leading-relaxed">
               {t.hero.description}
             </p>
-            <div className="flex gap-4">
-              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <a href="#contact" className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
                 {t.hero.getStarted}
               </a>
-              <button onClick={() => scrollToSection('services')} className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-full font-semibold hover:bg-purple-50 transition-all duration-300">
+              <button onClick={() => scrollToSection('services')} className="px-6 md:px-8 py-3 md:py-4 border-2 border-purple-600 text-purple-600 rounded-full font-semibold hover:bg-purple-50 transition-all duration-300">
                 {t.hero.ourServices}
               </button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative mt-8 md:mt-0">
             <video 
               ref={videoRef}
               autoPlay 
@@ -292,30 +292,30 @@ export default function Home() {
               playsInline
               webkit-playsinline="true"
               preload="auto"
-              className="w-full h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
+              className="w-full h-64 md:h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
             >
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <div className="absolute -bottom-6 -right-6 w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-6 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-64 md:w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-4 md:p-6 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {t.pricing.title}
               </h3>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800">{t.pricing.basic}</span>
-                  <span className="text-sm font-semibold text-gray-600">€450</span>
+              <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <div className="flex justify-between items-center p-2 md:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
+                  <span className="font-semibold text-gray-800 text-sm md:text-base">{t.pricing.basic}</span>
+                  <span className="text-xs md:text-sm font-semibold text-gray-600">€450</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800">{t.pricing.pro}</span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent hover:from-purple-500 hover:via-pink-400 hover:to-blue-500 hover:scale-110 transition-all duration-300 cursor-pointer brightness-110">€550</span>
+                <div className="flex justify-between items-center p-2 md:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
+                  <span className="font-semibold text-gray-800 text-sm md:text-base">{t.pricing.pro}</span>
+                  <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent hover:from-purple-500 hover:via-pink-400 hover:to-blue-500 hover:scale-110 transition-all duration-300 cursor-pointer brightness-110">€550</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800">{t.pricing.premium}</span>
-                  <span className="text-sm font-semibold text-gray-600">{t.pricing.custom}</span>
+                <div className="flex justify-between items-center p-2 md:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
+                  <span className="font-semibold text-gray-800 text-sm md:text-base">{t.pricing.premium}</span>
+                  <span className="text-xs md:text-sm font-semibold text-gray-600">{t.pricing.custom}</span>
                 </div>
               </div>
-              <button onClick={() => scrollToSection('services')} className="block w-full text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+              <button onClick={() => scrollToSection('services')} className="block w-full text-center px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm md:text-base">
                 {t.pricing.allServices}
               </button>
             </div>
@@ -324,28 +324,28 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} id="services" className={`py-16 px-6 bg-white/50 relative overflow-hidden transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section ref={servicesRef} id="services" className={`py-12 md:py-16 px-4 md:px-6 bg-white/50 relative overflow-hidden transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         {/* Decorative Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl animate-float-delayed"></div>
         <div className="absolute top-1/2 left-5 w-24 h-24 bg-pink-200/30 rounded-full blur-2xl animate-pulse"></div>
         
         <div className="max-w-6xl mx-auto relative">
-          <h3 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h3 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             {t.services.title}
           </h3>
           
           {/* Decorative Frame */}
           <div className="relative">
-            {/* Corner Decorations - Dynamic Color */}
-            <div className={`absolute -top-8 -left-8 w-16 h-16 border-t-4 border-l-4 ${services[activeCardIndex].frameColor} rounded-tl-3xl transition-colors duration-500`}></div>
-            <div className={`absolute -top-8 -right-8 w-16 h-16 border-t-4 border-r-4 ${services[activeCardIndex].frameColor} rounded-tr-3xl transition-colors duration-500`}></div>
-            <div className={`absolute -bottom-8 -left-8 w-16 h-16 border-b-4 border-l-4 ${services[activeCardIndex].frameColor} rounded-bl-3xl transition-colors duration-500`}></div>
-            <div className={`absolute -bottom-8 -right-8 w-16 h-16 border-b-4 border-r-4 ${services[activeCardIndex].frameColor} rounded-br-3xl transition-colors duration-500`}></div>
+            {/* Corner Decorations - Dynamic Color - Hidden on mobile */}
+            <div className={`hidden md:block absolute -top-8 -left-8 w-16 h-16 border-t-4 border-l-4 ${services[activeCardIndex].frameColor} rounded-tl-3xl transition-colors duration-500`}></div>
+            <div className={`hidden md:block absolute -top-8 -right-8 w-16 h-16 border-t-4 border-r-4 ${services[activeCardIndex].frameColor} rounded-tr-3xl transition-colors duration-500`}></div>
+            <div className={`hidden md:block absolute -bottom-8 -left-8 w-16 h-16 border-b-4 border-l-4 ${services[activeCardIndex].frameColor} rounded-bl-3xl transition-colors duration-500`}></div>
+            <div className={`hidden md:block absolute -bottom-8 -right-8 w-16 h-16 border-b-4 border-r-4 ${services[activeCardIndex].frameColor} rounded-br-3xl transition-colors duration-500`}></div>
             
-            <div className="flex justify-center items-center min-h-[580px]">
+            <div className="flex justify-center items-center min-h-[400px] md:min-h-[580px]">
               <div 
-                className="relative w-[500px] h-[550px] cursor-pointer"
+                className="relative w-full max-w-[350px] md:w-[500px] h-[450px] md:h-[550px] cursor-pointer"
                 onClick={handleCardClick}
               >
               {services.map((service, index) => {
@@ -355,21 +355,21 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className={`absolute top-1/2 left-1/2 w-full p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor}` : 'shadow-xl'}`}
+                    className={`absolute top-1/2 left-1/2 w-full p-6 md:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor}` : 'shadow-xl'}`}
                     style={{
-                      transform: `translate(-50%, -50%) translateX(${position * 15}px) translateY(${position * 15}px) rotate(${position * 2}deg) scale(${1 - position * 0.03})`,
+                      transform: `translate(-50%, -50%) translateX(${position * 10}px) translateY(${position * 10}px) rotate(${position * 1.5}deg) scale(${1 - position * 0.03})`,
                       zIndex: services.length - position,
                       opacity: position < 3 ? 1 - position * 0.15 : 0,
                       pointerEvents: position === 0 ? 'auto' : 'none'
                     }}
                   >
-                    <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-6 flex items-center justify-center transition-transform duration-300`}>
-                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className={`w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 md:mb-6 flex items-center justify-center transition-transform duration-300`}>
+                      <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                       </svg>
                     </div>
-                    <h4 className="text-3xl font-bold mb-5 text-gray-800">{service.title}</h4>
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <h4 className="text-2xl md:text-3xl font-bold mb-3 md:mb-5 text-gray-800">{service.title}</h4>
+                    <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -383,31 +383,31 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} id="contact" className={`py-12 px-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transition-all duration-1000 ${isCtaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+      <section ref={ctaRef} id="contact" className={`py-12 md:py-16 px-4 md:px-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transition-all duration-1000 ${isCtaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-5xl font-bold mb-6">{t.cta.title}</h3>
-          <p className="text-xl mb-8 opacity-90">
+          <h3 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">{t.cta.title}</h3>
+          <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90">
             {t.cta.description}
           </p>
-          <a href="mailto:hello@fylu.com" className="inline-block px-10 py-5 bg-white text-purple-600 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <a href="mailto:hello@fylu.com" className="inline-block px-8 md:px-10 py-4 md:py-5 bg-white text-purple-600 rounded-full font-bold text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
             {t.cta.button}
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
+      <footer className="bg-gray-900 text-white py-8 md:py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-4" />
-          <p className="text-gray-400 mb-6">{t.footer.tagline}</p>
-          <div className="flex justify-center gap-6 mb-6">
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={150} height={40} className="mx-auto mb-3 md:mb-4 md:w-[200px] md:h-[50px]" />
+          <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">{t.footer.tagline}</p>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-4 md:mb-6 text-sm md:text-base">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.privacy}</a>
             <span className="text-gray-600">•</span>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.terms}</a>
             <span className="text-gray-600">•</span>
             <a href="#contact" className="text-gray-400 hover:text-white transition-colors">{t.footer.contact}</a>
           </div>
-          <p className="text-sm text-gray-500">{t.footer.copyright}</p>
+          <p className="text-xs md:text-sm text-gray-500">{t.footer.copyright}</p>
         </div>
       </footer>
     </div>
