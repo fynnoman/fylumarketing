@@ -242,11 +242,15 @@ export default function Home() {
               loop 
               muted 
               playsInline
+              webkit-playsinline="true"
               preload="auto"
               className="w-full h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
               ref={(video) => {
                 if (video) {
                   video.playbackRate = 1.0;
+                  video.muted = true;
+                  video.setAttribute('playsinline', 'true');
+                  video.setAttribute('webkit-playsinline', 'true');
                   // Ensure video plays immediately
                   const playPromise = video.play();
                   if (playPromise !== undefined) {
