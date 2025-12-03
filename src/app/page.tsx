@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [language, setLanguage] = useState<'de' | 'en'>('de');
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const translations = {
     de: {
@@ -188,6 +189,13 @@ export default function Home() {
     
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
+
+    if (videoRef.current) {
+      videoRef.current.play().catch(err => {
+        console.error("Video autoplay was prevented:", err);
+      });
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -238,6 +246,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <video 
+              ref={videoRef}
               autoPlay 
               loop 
               muted 
@@ -245,19 +254,6 @@ export default function Home() {
               webkit-playsinline="true"
               preload="auto"
               className="w-full h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
-              ref={(video) => {
-                if (video) {
-                  video.playbackRate = 1.0;
-                  video.muted = true;
-                  video.setAttribute('playsinline', 'true');
-                  video.setAttribute('webkit-playsinline', 'true');
-                  // Ensure video plays immediately
-                  const playPromise = video.play();
-                  if (playPromise !== undefined) {
-                    playPromise.catch(err => console.log('Video autoplay prevented:', err));
-                  }
-                }
-              }}
             >
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
