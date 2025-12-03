@@ -178,7 +178,12 @@ export default function Home() {
   ];
 
   const handleCardClick = () => {
-    setActiveCardIndex((prev) => (prev + 1) % services.length);
+    console.log('Card clicked! Current index:', activeCardIndex);
+    setActiveCardIndex((prev) => {
+      const next = (prev + 1) % services.length;
+      console.log('Switching to index:', next);
+      return next;
+    });
   };
 
   const scrollToSection = (sectionId: string) => {
