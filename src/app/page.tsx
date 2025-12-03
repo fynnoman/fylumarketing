@@ -1,12 +1,17 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [language, setLanguage] = useState<'de' | 'en'>('de');
+  const [isServicesVisible, setIsServicesVisible] = useState(false);
+  const [isCtaVisible, setIsCtaVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
 
   const translations = {
     de: {
@@ -16,7 +21,7 @@ export default function Home() {
         contact: 'Kontakt'
       },
       hero: {
-        title1: 'Heben Sie Ihre Marke',
+        title1: 'Skalieren Sie Ihr Unternehmen',
         title2: 'Mit kreativer Exzellenz',
         description: 'Wir erwecken Ihre Vision zum Leben mit atemberaubenden Websites, auffälligen Flyern und professionellen Marketingmaterialien, die Ihr Unternehmen hervorheben.',
         getStarted: 'Jetzt starten',
@@ -187,33 +192,67 @@ export default function Home() {
     // Scroll to top on page load
     window.scrollTo(0, 0);
     
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      
+      // Check if sections are visible
+      if (servicesRef.current) {
+        const rect = servicesRef.current.getBoundingClientRect();
+        setIsServicesVisible(rect.top < window.innerHeight * 0.75);
+      }
+      
+      if (ctaRef.current) {
+        const rect = ctaRef.current.getBoundingClientRect();
+        setIsCtaVisible(rect.top < window.innerHeight * 0.75);
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial visibility
 
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.error("Video autoplay was prevented:", err);
-      });
-    }
+    // Try to autoplay video
+    const playVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.play().catch(() => {
+          // Silently fail if autoplay is blocked
+          // Video will play when user interacts with the page
+        });
+      }
+    };
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Attempt to play video
+    playVideo();
+
+    // Also try to play on any user interaction
+    const handleUserInteraction = () => {
+      playVideo();
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+    };
+
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('scroll', handleUserInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+    };
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-blue-50">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            Fylu Marketing & Design
-          </h1>
-          <div className="flex gap-8 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-0.5 flex justify-between items-center">
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={150} height={35} />
+          <div className="flex gap-6 items-center">
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer">{t.nav.services}</button>
             <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300">{t.nav.about}</a>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer">{t.nav.contact}</button>
             <button 
               onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
-              className="ml-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
+              className="ml-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               {language === 'de' ? 'DE' : 'EN'}
             </button>
@@ -285,7 +324,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-6 bg-white/50 relative overflow-hidden">
+      <section ref={servicesRef} id="services" className={`py-16 px-6 bg-white/50 relative overflow-hidden transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         {/* Decorative Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl animate-float-delayed"></div>
@@ -344,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-12 px-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600">
+      <section ref={ctaRef} id="contact" className={`py-12 px-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transition-all duration-1000 ${isCtaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="max-w-4xl mx-auto text-center text-white">
           <h3 className="text-5xl font-bold mb-6">{t.cta.title}</h3>
           <p className="text-xl mb-8 opacity-90">
@@ -359,9 +398,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Fylu Marketing & Design
-          </h4>
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-4" />
           <p className="text-gray-400 mb-6">{t.footer.tagline}</p>
           <div className="flex justify-center gap-6 mb-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.privacy}</a>
