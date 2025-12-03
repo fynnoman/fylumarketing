@@ -345,7 +345,7 @@ export default function Home() {
             
             <div className="flex justify-center items-center min-h-[400px] sm:min-h-[500px] lg:min-h-[580px]">
               <div 
-                className="relative w-full max-w-[350px] sm:max-w-[450px] lg:w-[500px] h-[450px] sm:h-[500px] lg:h-[550px] cursor-pointer"
+                className="relative w-full max-w-[350px] sm:max-w-[450px] lg:w-[500px] h-[450px] sm:h-[500px] lg:h-[550px] cursor-pointer group"
                 onClick={handleCardClick}
               >
               {services.map((service, index) => {
@@ -356,7 +356,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor}` : 'shadow-xl'}`}
+                    className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor} hover:shadow-3xl` : 'shadow-xl'}`}
                     style={{
                       transform: `translate(-50%, -50%) translateX(${position * offsetDistance}px) translateY(${position * offsetDistance}px) rotate(${position * 1.5}deg) scale(${1 - position * 0.03})`,
                       zIndex: services.length - position,
@@ -364,7 +364,7 @@ export default function Home() {
                       pointerEvents: position === 0 ? 'auto' : 'none'
                     }}
                   >
-                    <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300`}>
+                    <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300 ${isActive ? 'group-hover:scale-110' : ''}`}>
                       <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                       </svg>
@@ -379,7 +379,7 @@ export default function Home() {
             </div>
             </div>
           </div>
-          <p className="text-center mt-6 text-gray-500 text-sm">{t.services.clickHint}</p>
+          <p className="text-center mt-6 text-gray-500 text-sm animate-pulse">{t.services.clickHint}</p>
         </div>
       </section>
 
