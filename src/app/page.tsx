@@ -245,7 +245,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2 lg:py-1 flex justify-between items-center">
-          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={100} height={25} className="lg:w-[150px] lg:h-[35px]" />
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={150} height={35} className="w-auto h-6 lg:h-9 object-contain" />
           <div className="flex gap-3 lg:gap-6 items-center text-xs lg:text-base">
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer hidden sm:block">{t.nav.services}</button>
             <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hidden sm:block">{t.nav.about}</a>
@@ -351,13 +351,14 @@ export default function Home() {
               {services.map((service, index) => {
                 const position = (index - activeCardIndex + services.length) % services.length;
                 const isActive = position === 0;
+                const offsetDistance = 15; // Use consistent offset for all screen sizes
                 
                 return (
                   <div
                     key={index}
                     className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor}` : 'shadow-xl'}`}
                     style={{
-                      transform: `translate(-50%, -50%) translateX(${position * (window.innerWidth < 640 ? 10 : 15)}px) translateY(${position * (window.innerWidth < 640 ? 10 : 15)}px) rotate(${position * 1.5}deg) scale(${1 - position * 0.03})`,
+                      transform: `translate(-50%, -50%) translateX(${position * offsetDistance}px) translateY(${position * offsetDistance}px) rotate(${position * 1.5}deg) scale(${1 - position * 0.03})`,
                       zIndex: services.length - position,
                       opacity: position < 3 ? 1 - position * 0.15 : 0,
                       pointerEvents: position === 0 ? 'auto' : 'none'
@@ -398,7 +399,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 lg:py-12 px-4 lg:px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={150} height={40} className="mx-auto mb-3 lg:mb-4 lg:w-[200px] lg:h-[50px]" />
+          <Image src="/logo.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-3 lg:mb-4 w-auto h-10 lg:h-12 object-contain" />
           <p className="text-gray-400 mb-4 lg:mb-6 text-sm lg:text-base">{t.footer.tagline}</p>
           <div className="flex flex-wrap justify-center gap-3 lg:gap-6 mb-4 lg:mb-6 text-sm lg:text-base">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.privacy}</a>
