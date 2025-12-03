@@ -242,10 +242,13 @@ export default function Home() {
               loop 
               muted 
               playsInline
+              preload="auto"
               className="w-full h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]"
               ref={(video) => {
                 if (video) {
                   video.playbackRate = 1.0;
+                  // Ensure video plays
+                  video.play().catch(err => console.log('Video autoplay prevented:', err));
                 }
               }}
             >
