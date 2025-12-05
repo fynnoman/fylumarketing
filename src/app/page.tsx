@@ -28,12 +28,9 @@ export default function Home() {
         ourServices: 'Unsere Dienstleistungen'
       },
       pricing: {
-        title: 'Unsere Preise',
-        basic: 'Basic',
-        pro: 'Pro',
-        premium: 'Premium',
-        custom: 'INDIVIDUELL',
-        allServices: 'Alle Dienstleistungen'
+        title: 'Individuelle Preise',
+        description: 'Unsere Preise richten sich nach Ihren individuellen Anforderungen. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.',
+        contact: 'Jetzt Kontakt aufnehmen'
       },
       services: {
         title: 'Unsere Dienstleistungen',
@@ -86,12 +83,9 @@ export default function Home() {
         ourServices: 'Our Services'
       },
       pricing: {
-        title: 'Our Pricing',
-        basic: 'Basic',
-        pro: 'Pro',
-        premium: 'Premium',
-        custom: 'CUSTOM',
-        allServices: 'All Services'
+        title: 'Custom Pricing',
+        description: 'Our prices are tailored to your individual requirements. Contact us for a customized quote.',
+        contact: 'Get in Contact'
       },
       services: {
         title: 'Our Services',
@@ -302,26 +296,15 @@ export default function Home() {
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-64 sm:w-72 lg:w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-4 lg:p-6 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-64 sm:w-72 lg:w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-6 lg:p-8 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
+              <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-5 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {t.pricing.title}
               </h3>
-              <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">
-                <div className="flex justify-between items-center p-2 lg:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800 text-sm lg:text-base">{t.pricing.basic}</span>
-                  <span className="text-xs lg:text-sm font-semibold text-gray-600">€450</span>
-                </div>
-                <div className="flex justify-between items-center p-2 lg:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800 text-sm lg:text-base">{t.pricing.pro}</span>
-                  <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent hover:from-purple-500 hover:via-pink-400 hover:to-blue-500 hover:scale-110 transition-all duration-300 cursor-pointer brightness-110">€550</span>
-                </div>
-                <div className="flex justify-between items-center p-2 lg:p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
-                  <span className="font-semibold text-gray-800 text-sm lg:text-base">{t.pricing.premium}</span>
-                  <span className="text-xs lg:text-sm font-semibold text-gray-600">{t.pricing.custom}</span>
-                </div>
-              </div>
-              <button onClick={() => scrollToSection('services')} className="block w-full text-center px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base">
-                {t.pricing.allServices}
+              <p className="text-sm lg:text-base text-gray-700 mb-5 lg:mb-6 leading-relaxed">
+                {t.pricing.description}
+              </p>
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-center px-4 lg:px-6 py-3 lg:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base">
+                {t.pricing.contact}
               </button>
             </div>
           </div>
