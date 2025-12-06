@@ -9,6 +9,7 @@ export default function Home() {
   const [language, setLanguage] = useState<'de' | 'en'>('de');
   const [isServicesVisible, setIsServicesVisible] = useState(false);
   const [isCtaVisible, setIsCtaVisible] = useState(false);
+  const [videoCardsSwapped, setVideoCardsSwapped] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const servicesRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
@@ -31,6 +32,18 @@ export default function Home() {
         title: 'Individuelle Preise',
         description: 'Unsere Preise richten sich nach Ihren individuellen Anforderungen. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.',
         contact: 'Jetzt Kontakt aufnehmen'
+      },
+      websiteService: {
+        title: 'WEBSITE SERVICE',
+        paragraph1: 'Eine erstklassige Website braucht ein <strong>brillantes, modernes Design</strong>, das auf <strong>jedem Gerät perfekt funktioniert</strong> und <strong>extrem schnell lädt</strong>. Besucher sollen sofort verstehen, was dein Unternehmen anbietet, und alle wichtigen Informationen ohne Umwege finden. Eine <strong>klare Navigation, präzise formulierte Texte, hochwertige Bilder und eine durchdachte Struktur</strong> sorgen dafür, dass die Seite professionell, vertrauenswürdig und beeindruckend wirkt.',
+        paragraph2: 'Damit die Website deinem Unternehmen echten Nutzen bringt, sollte sie <strong>praktische und wirkungsvolle Funktionen</strong> enthalten – zum Beispiel Kontaktformulare, Fotogalerien, Menüs, Buchungssysteme oder Standortanzeigen. Jede Schaltfläche, jeder Link und jede Unterseite muss <strong>reibungslos, schnell und zuverlässig</strong> funktionieren, damit der gesamte Auftritt stark und einheitlich wirkt.',
+        paragraph3: 'Die <strong>DSGVO-Konformität</strong> ist dabei unverzichtbar. Die Website benötigt eine korrekte, leicht verständliche und gut sichtbare <strong>Datenschutzerklärung</strong>, die genau erklärt, welche Daten erhoben werden und warum. Jedes Formular, das persönliche Daten sammelt, muss eine <strong>klare Einwilligung</strong> einholen. Wenn Cookies oder externe Dienste genutzt werden, ist ein professionelles <strong>Cookie-Consent-System</strong> notwendig, damit Besucher selbst entscheiden können, was sie erlauben. Die Seite muss außerdem über eine <strong>sichere Verbindung, zuverlässiges Hosting</strong> und einen verantwortungsvollen Umgang mit allen Daten verfügen. Ein rechtssicheres <strong>Impressum</strong> ist für fast alle geschäftlichen Websites in Deutschland Pflicht.',
+        paragraph4: 'Eine wirklich starke Website sollte zudem <strong>leicht aktualisierbar</strong> sein, damit du jederzeit neue Bilder, Inhalte oder Unterseiten hinzufügen kannst. Sie muss so aufgebaut sein, dass sie problemlos <strong>wachsen kann</strong> – zum Beispiel durch zukünftige Erweiterungen wie einen Online-Shop, einen Blog oder ein Buchungssystem. <strong>Regelmäßige Updates, Backups und Sicherheitsprüfungen</strong> halten alles dauerhaft stabil und geschützt.',
+        paragraph5: 'Eine hervorragende Website ist schnell, klar, überzeugend, rechtssicher und bereit, mit deinem Unternehmen mitzuwachsen.',
+        ideaLink: 'Haben Sie bereits eine Idee?'
+      },
+      latestArtworks: {
+        title: 'Neueste Kunstwerke'
       },
       services: {
         title: 'Unsere Dienstleistungen',
@@ -61,6 +74,10 @@ export default function Home() {
         description: 'Lassen Sie uns zusammenarbeiten, um etwas Großartiges zu schaffen. Kontaktieren Sie uns noch heute!',
         button: 'Kontaktieren Sie uns'
       },
+      clients: {
+        title: 'Zufriedene Kunden',
+        subtitle: 'Vertrauen von führenden Unternehmen'
+      },
       footer: {
         tagline: 'Außergewöhnliche digitale Erlebnisse seit 2025',
         privacy: 'Datenschutz',
@@ -86,6 +103,18 @@ export default function Home() {
         title: 'Custom Pricing',
         description: 'Our prices are tailored to your individual requirements. Contact us for a customized quote.',
         contact: 'Get in Contact'
+      },
+      websiteService: {
+        title: 'WEBSITE SERVICE',
+        paragraph1: 'A brilliant website needs a <strong>stunning, cutting-edge design</strong> that works flawlessly on <strong>every single device</strong> and <strong>loads lightning-fast</strong>. Visitors should instantly understand what your business offers and be able to find all crucial information without any effort. <strong>Crystal-clear navigation, compelling texts, premium images and an intuitive structure</strong> make the page effortless to use and leave a powerful, professional impression.',
+        paragraph2: 'To make the website truly valuable for your business, it should include <strong>powerful and effective features</strong> such as contact forms, photo galleries, menus, booking systems or location information. Every button, link and page must work <strong>flawlessly, reliably and seamlessly</strong>.',
+        paragraph3: '<strong>DSGVO compliance</strong> is absolutely essential. The website needs a precise and easily accessible <strong>privacy policy</strong> that clearly explains what data is collected and why. Any form that collects personal data must ask for <strong>explicit consent</strong>. If you use cookies or external tools that collect data, a professional <strong>cookie consent system</strong> is mandatory so visitors can choose exactly what they allow. The website must use a <strong>secure connection, reliable hosting</strong> and handle all personal data responsibly. A legally compliant <strong>Impressum</strong> is required for almost all business websites in Germany.',
+        paragraph4: 'A truly exceptional website should also be <strong>effortlessly updatable</strong>, so you can add new images, content or pages at any time. It must be built in a way that allows <strong>unlimited growth</strong>, for example adding a shop, blog or booking system later. <strong>Regular updates, backups and security checks</strong> keep everything running safely and flawlessly.',
+        paragraph5: 'An outstanding website is lightning-fast, crystal-clear, exceptionally user-friendly, legally bulletproof and ready to scale with your business.',
+        ideaLink: 'Have an idea already?'
+      },
+      latestArtworks: {
+        title: 'Latest Artworks'
       },
       services: {
         title: 'Our Services',
@@ -116,6 +145,10 @@ export default function Home() {
         description: "Let's work together to create something amazing. Get in touch with us today!",
         button: 'Contact Us'
       },
+      clients: {
+        title: 'Happy Clients',
+        subtitle: 'Trusted by leading companies'
+      },
       footer: {
         tagline: 'Creating exceptional digital experiences since 2025',
         privacy: 'Privacy Policy',
@@ -135,7 +168,8 @@ export default function Home() {
       gradient: "from-purple-500 to-purple-600",
       frameColor: "border-purple-400",
       glowColor: "shadow-purple-500/50",
-      icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+      featured: true // Mark as featured
     },
     {
       title: t.services.flyer.title,
@@ -178,6 +212,10 @@ export default function Home() {
       console.log('Switching to index:', next);
       return next;
     });
+  };
+
+  const handleVideoCardClick = () => {
+    setVideoCardsSwapped((prev) => !prev);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -240,11 +278,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2 lg:py-1 flex justify-between items-center">
-          <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={150} height={35} className="w-auto h-8 lg:h-12 object-contain" />
+          <a href="https://www.vars-development.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+            <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={150} height={35} className="w-auto h-8 lg:h-12 object-contain" />
+          </a>
           <div className="flex gap-3 lg:gap-6 items-center text-xs lg:text-base">
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer hidden sm:block">{t.nav.services}</button>
             <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hidden sm:block">{t.nav.about}</a>
@@ -293,14 +333,14 @@ export default function Home() {
               preload="auto"
               className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
             >
-              <source src="/video.mp4" type="video/mp4" />
+              <source src="/video2.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-64 sm:w-72 lg:w-80 bg-white/[0.78] rounded-3xl animate-float-delayed shadow-2xl p-6 lg:p-8 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
+            <div className="absolute -bottom-2 -right-4 lg:-bottom-3 lg:-right-6 w-64 sm:w-72 lg:w-80 bg-white/30 rounded-3xl animate-float-delayed shadow-2xl p-6 lg:p-8 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
               <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-5 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {t.pricing.title}
               </h3>
-              <p className="text-sm lg:text-base text-gray-700 mb-5 lg:mb-6 leading-relaxed">
+              <p className="text-sm lg:text-base text-gray-800 mb-5 lg:mb-6 leading-relaxed font-semibold">
                 {t.pricing.description}
               </p>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-center px-4 lg:px-6 py-3 lg:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base">
@@ -340,11 +380,12 @@ export default function Home() {
                 const position = (index - activeCardIndex + services.length) % services.length;
                 const isActive = position === 0;
                 const offsetDistance = 15; // Use consistent offset for all screen sizes
+                const isFeatured = service.featured && isActive;
                 
                 return (
                   <div
                     key={index}
-                    className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor} hover:shadow-3xl` : 'shadow-xl'}`}
+                    className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor} hover:shadow-3xl` : 'shadow-xl'} ${isFeatured ? 'ring-4 ring-purple-400 ring-opacity-50 scale-105' : ''}`}
                     style={{
                       transform: `translate(-50%, -50%) translateX(${position * offsetDistance}px) translateY(${position * offsetDistance}px) rotate(${position * 1.5}deg) scale(${1 - position * 0.03})`,
                       zIndex: services.length - position,
@@ -352,12 +393,17 @@ export default function Home() {
                       pointerEvents: position === 0 ? 'auto' : 'none'
                     }}
                   >
-                    <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300 ${isActive ? 'group-hover:scale-110' : ''}`}>
+                    {isFeatured && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                        {language === 'de' ? 'HAUPTDIENSTLEISTUNG' : 'MAIN SERVICE'}
+                      </div>
+                    )}
+                    <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300 ${isActive ? 'group-hover:scale-110' : ''} ${isFeatured ? 'animate-pulse shadow-lg shadow-purple-500/50' : ''}`}>
                       <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                       </svg>
                     </div>
-                    <h4 className="text-2xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-5 text-gray-800">{service.title}</h4>
+                    <h4 className={`text-2xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-5 text-gray-800 ${isFeatured ? 'text-purple-600' : ''}`}>{service.title}</h4>
                     <p className="text-base sm:text-base lg:text-lg text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
@@ -371,30 +417,161 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full Screen Round Card Section */}
+      <section className="relative min-h-screen flex items-center justify-start px-4 lg:px-6 overflow-hidden bg-white">
+        <div className="w-full h-screen flex items-center justify-start">
+          <div className="group w-[45vw] h-[90vh] rounded-[100px] bg-gradient-to-br from-blue-200 via-white to-pink-100 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_35px_80px_-15px_rgba(0,0,0,0.6)] transition-shadow duration-500 p-12 lg:p-16 overflow-y-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
+              {t.websiteService.title}
+            </h2>
+            <div className="text-gray-800 space-y-6 text-base lg:text-lg leading-relaxed text-center">
+              <p dangerouslySetInnerHTML={{ 
+                __html: t.websiteService.paragraph1.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
+              }} />
+              <p dangerouslySetInnerHTML={{ 
+                __html: t.websiteService.paragraph2.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
+              }} />
+              <p dangerouslySetInnerHTML={{ 
+                __html: t.websiteService.paragraph3.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
+              }} />
+              <p dangerouslySetInnerHTML={{ 
+                __html: t.websiteService.paragraph4.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
+              }} />
+              <p className="font-bold text-xl lg:text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                {t.websiteService.paragraph5}
+              </p>
+              <div className="mt-8">
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                >
+                  {t.websiteService.ideaLink}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Arrow Icon pointing right */}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <svg 
+            className="w-16 h-16 lg:w-20 lg:h-20 text-purple-600 animate-pulse" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2.5} 
+              d="M13 7l5 5m0 0l-5 5m5-5H6" 
+            />
+          </svg>
+        </div>
+
+        {/* Latest Artworks Section */}
+        <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-0">
+          {/* Heading */}
+          <h3 className="text-3xl lg:text-4xl font-bold mb-12 lg:mb-16 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            {t.latestArtworks.title}
+          </h3>
+          
+          {/* 3D Overlapping Video Cards */}
+          <div className="flex flex-col items-center gap-0">
+            {/* First Card - Bildschirmaufnahme */}
+            <div 
+              onClick={handleVideoCardClick}
+              className={`relative w-[420px] h-[280px] lg:w-[560px] lg:h-[340px] rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
+                videoCardsSwapped 
+                  ? 'rotate-[8deg] hover:rotate-[4deg] -mt-20 lg:-mt-24 z-0' 
+                  : 'rotate-[-8deg] hover:rotate-[-4deg] z-10'
+              }`}
+            >
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/Bildschirmaufnahme 2025-12-06 um 20.37.38.mov" type="video/mp4" />
+              </video>
+            </div>
+            
+            {/* Second Card - video.mp4 */}
+            <div 
+              onClick={handleVideoCardClick}
+              className={`relative w-[420px] h-[280px] lg:w-[560px] lg:h-[340px] rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
+                videoCardsSwapped 
+                  ? 'rotate-[-8deg] hover:rotate-[-4deg] z-10' 
+                  : 'rotate-[8deg] hover:rotate-[4deg] -mt-20 lg:-mt-24 z-0'
+              }`}
+            >
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Happy Clients Section */}
+      <section className="py-12 lg:py-16 px-4 lg:px-6 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8 lg:mb-12">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              {t.clients.title}
+            </h3>
+            <p className="text-base lg:text-xl text-gray-600">{t.clients.subtitle}</p>
+          </div>
+          
+          {/* Client Logo */}
+          <div className="flex justify-center items-center">
+            <a href="https://www.vars-development.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <Image 
+                src="/logovars.png" 
+                alt="Vaillant" 
+                width={300} 
+                height={120} 
+                className="w-auto h-20 lg:h-28 object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section ref={ctaRef} id="contact" className={`py-12 lg:py-16 px-4 lg:px-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transition-all duration-1000 ${isCtaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">{t.cta.title}</h3>
-          <p className="text-base lg:text-xl mb-6 lg:mb-8 opacity-90">
+      <section ref={ctaRef} id="contact" className="py-16 lg:py-24 px-4 lg:px-6 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">{t.cta.title}</h3>
+          <p className="text-base lg:text-xl mb-6 lg:mb-8 text-gray-700">
             {t.cta.description}
           </p>
-          <a href="mailto:hello@fylu.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-white text-purple-600 rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <a href="mailto:hello@fylu.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
             {t.cta.button}
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 lg:py-12 px-4 lg:px-6">
+      <footer className="bg-white text-gray-800 py-8 lg:py-12 px-4 lg:px-6 border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
-          <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-3 lg:mb-4 w-auto h-14 lg:h-16 object-contain" />
-          <p className="text-gray-400 mb-4 lg:mb-6 text-sm lg:text-base">{t.footer.tagline}</p>
+          <a href="https://www.vars-development.com" target="_blank" rel="noopener noreferrer" className="inline-block transition-opacity hover:opacity-80">
+            <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-3 lg:mb-4 w-auto h-14 lg:h-16 object-contain" />
+          </a>
+          <p className="text-gray-600 mb-4 lg:mb-6 text-sm lg:text-base">{t.footer.tagline}</p>
           <div className="flex flex-wrap justify-center gap-3 lg:gap-6 mb-4 lg:mb-6 text-sm lg:text-base">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.privacy}</a>
-            <span className="text-gray-600">•</span>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">{t.footer.terms}</a>
-            <span className="text-gray-600">•</span>
-            <a href="#contact" className="text-gray-400 hover:text-white transition-colors">{t.footer.contact}</a>
+            <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">{t.footer.privacy}</a>
+            <span className="text-gray-400">•</span>
+            <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">{t.footer.terms}</a>
+            <span className="text-gray-400">•</span>
+            <a href="#contact" className="text-gray-600 hover:text-purple-600 transition-colors">{t.footer.contact}</a>
           </div>
           <p className="text-xs lg:text-sm text-gray-500">{t.footer.copyright}</p>
         </div>
