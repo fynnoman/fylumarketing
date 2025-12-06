@@ -250,6 +250,10 @@ export default function Home() {
     // Try to autoplay video
     const playVideo = () => {
       if (videoRef.current) {
+        // Set playback speed to 1.2x (20% faster)
+        videoRef.current.playbackRate = 1.2;
+        // Start video at 4 seconds
+        videoRef.current.currentTime = 4;
         videoRef.current.play().catch(() => {
           // Silently fail if autoplay is blocked
           // Video will play when user interacts with the page
