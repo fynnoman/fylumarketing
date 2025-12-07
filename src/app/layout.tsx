@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Fylu Marketing & Design | Professional Marketing Agency",
   description: "Fylu Marketing & Design offers professional website development, flyer design, business cards, and complete marketing solutions for businesses.",
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
