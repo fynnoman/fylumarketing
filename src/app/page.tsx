@@ -306,7 +306,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 lg:px-6 pt-24 lg:pt-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
+          <div className="space-y-6 lg:space-y-8 animate-fade-in-up text-center lg:text-left">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
                 {t.hero.title1}
@@ -317,7 +317,7 @@ export default function Home() {
             <p className="text-base lg:text-xl text-gray-600 leading-relaxed">
               {t.hero.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
               <a href="#contact" className="px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
                 {t.hero.getStarted}
               </a>
@@ -335,22 +335,11 @@ export default function Home() {
               playsInline
               webkit-playsinline="true"
               preload="auto"
-              className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-3xl animate-float shadow-2xl drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)] bg-gradient-to-br from-purple-100 to-blue-100"
+              className="w-full h-96 sm:h-[500px] lg:h-[600px] object-cover rounded-3xl animate-float bg-gradient-to-br from-purple-100 to-blue-100"
             >
               <source src="/video2.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <div className="absolute -bottom-2 -right-4 lg:-bottom-3 lg:-right-6 w-64 sm:w-72 lg:w-80 bg-white/30 rounded-3xl animate-float-delayed shadow-2xl p-6 lg:p-8 border-2 border-gradient-to-br from-yellow-400 to-orange-400 drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-              <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-5 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                {t.pricing.title}
-              </h3>
-              <p className="text-sm lg:text-base text-gray-800 mb-5 lg:mb-6 leading-relaxed font-semibold">
-                {t.pricing.description}
-              </p>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-center px-4 lg:px-6 py-3 lg:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base">
-                {t.pricing.contact}
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -424,7 +413,7 @@ export default function Home() {
       {/* Full Screen Round Card Section */}
       <section className="relative min-h-screen flex items-center justify-start px-4 lg:px-6 overflow-hidden bg-white">
         <div className="w-full h-screen flex items-center justify-start">
-          <div className="group w-[45vw] h-[90vh] rounded-[100px] bg-gradient-to-br from-blue-200 via-white to-pink-100 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_35px_80px_-15px_rgba(0,0,0,0.6)] transition-shadow duration-500 p-12 lg:p-16 overflow-y-auto">
+          <div className="group w-[45vw] h-[90vh] rounded-[50px] bg-gradient-to-br from-blue-200 via-white to-pink-100 transition-shadow duration-500 p-12 lg:p-16 overflow-y-auto">
             <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
               {t.websiteService.title}
             </h2>
@@ -564,7 +553,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white text-gray-800 py-8 lg:py-12 px-4 lg:px-6 border-t border-gray-200">
+      <footer className="bg-white text-gray-800 py-8 lg:py-12 px-4 lg:px-6 pb-12 lg:pb-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
           <a href="https://www.vars-development.com" target="_blank" rel="noopener noreferrer" className="inline-block transition-opacity hover:opacity-80">
             <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={200} height={50} className="mx-auto mb-3 lg:mb-4 w-auto h-14 lg:h-16 object-contain" />
