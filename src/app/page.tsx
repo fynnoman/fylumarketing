@@ -334,8 +334,9 @@ export default function Home() {
               muted 
               playsInline
               webkit-playsinline="true"
-              preload="auto"
+              preload="metadata"
               className="w-full h-96 sm:h-[500px] lg:h-[600px] object-cover rounded-3xl animate-float bg-gradient-to-br from-purple-100 to-blue-100"
+              style={{ backgroundColor: '#e9d5ff' }}
             >
               <source src="/video2.mov" type="video/mp4" />
               Your browser does not support the video tag.
