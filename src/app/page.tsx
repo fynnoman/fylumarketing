@@ -411,13 +411,15 @@ export default function Home() {
       </section>
 
       {/* Full Screen Round Card Section */}
-      <section className="relative min-h-screen flex items-center justify-start px-4 lg:px-6 overflow-hidden bg-white">
-        <div className="w-full h-screen flex items-center justify-start">
-          <div className="group w-[45vw] h-[90vh] rounded-[50px] bg-gradient-to-br from-blue-200 via-white to-pink-100 transition-shadow duration-500 p-12 lg:p-16 overflow-y-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
+      <section className="relative py-16 px-4 lg:px-6 bg-white">
+        {/* Mobile: Stacked Layout, Desktop: Side-by-side */}
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
+          {/* Website Service Card - Full width on mobile, 45% on desktop */}
+          <div className="w-full lg:w-[45%] rounded-[30px] lg:rounded-[50px] bg-gradient-to-br from-blue-200 via-white to-pink-100 shadow-lg p-6 sm:p-8 lg:p-12 xl:p-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 lg:mb-8 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
               {t.websiteService.title}
             </h2>
-            <div className="text-gray-800 space-y-6 text-base lg:text-lg leading-relaxed text-center">
+            <div className="text-gray-800 space-y-4 lg:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed text-center max-h-[500px] lg:max-h-[600px] overflow-y-auto">
               <p dangerouslySetInnerHTML={{ 
                 __html: t.websiteService.paragraph1.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
               }} />
@@ -430,85 +432,67 @@ export default function Home() {
               <p dangerouslySetInnerHTML={{ 
                 __html: t.websiteService.paragraph4.replace(/<strong>/g, '<span class="font-bold text-purple-700">').replace(/<\/strong>/g, '</span>')
               }} />
-              <p className="font-bold text-xl lg:text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <p className="font-bold text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {t.websiteService.paragraph5}
               </p>
-              <div className="mt-8">
+              <div className="mt-6 lg:mt-8">
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer text-sm sm:text-base"
                 >
                   {t.websiteService.ideaLink}
                 </button>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Arrow Icon pointing right */}
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <svg 
-            className="w-16 h-16 lg:w-20 lg:h-20 text-purple-600 animate-pulse" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2.5} 
-              d="M13 7l5 5m0 0l-5 5m5-5H6" 
-            />
-          </svg>
-        </div>
 
-        {/* Latest Artworks Section */}
-        <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-0">
-          {/* Heading */}
-          <h3 className="text-3xl lg:text-4xl font-bold mb-12 lg:mb-16 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            {t.latestArtworks.title}
-          </h3>
-          
-          {/* 3D Overlapping Video Cards */}
-          <div className="flex flex-col items-center gap-0">
-            {/* First Card - Bildschirmaufnahme */}
-            <div 
-              onClick={handleVideoCardClick}
-              className={`relative w-[420px] h-[280px] lg:w-[560px] lg:h-[340px] rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
-                videoCardsSwapped 
-                  ? 'rotate-[8deg] hover:rotate-[4deg] -mt-20 lg:-mt-24 z-0' 
-                  : 'rotate-[-8deg] hover:rotate-[-4deg] z-10'
-              }`}
-            >
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/Bildschirmaufnahme 2025-12-06 um 20.37.38.mov" type="video/mp4" />
-              </video>
-            </div>
+          {/* Latest Artworks Section - Below on mobile, right side on desktop */}
+          <div className="w-full lg:w-[50%] flex flex-col items-center">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent text-center">
+              {t.latestArtworks.title}
+            </h3>
             
-            {/* Second Card - video.mp4 */}
-            <div 
-              onClick={handleVideoCardClick}
-              className={`relative w-[420px] h-[280px] lg:w-[560px] lg:h-[340px] rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
-                videoCardsSwapped 
-                  ? 'rotate-[-8deg] hover:rotate-[-4deg] z-10' 
-                  : 'rotate-[8deg] hover:rotate-[4deg] -mt-20 lg:-mt-24 z-0'
-              }`}
-            >
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover"
+            {/* 3D Overlapping Video Cards - Responsive sizing */}
+            <div className="flex flex-col items-center gap-0 w-full max-w-md lg:max-w-none">
+              {/* First Card - Bildschirmaufnahme */}
+              <div 
+                onClick={handleVideoCardClick}
+                className={`relative w-[280px] h-[190px] sm:w-[360px] sm:h-[240px] lg:w-[460px] lg:h-[300px] xl:w-[560px] xl:h-[340px] rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
+                  videoCardsSwapped 
+                    ? 'rotate-[8deg] hover:rotate-[4deg] -mt-12 sm:-mt-16 lg:-mt-20 xl:-mt-24 z-0' 
+                    : 'rotate-[-8deg] hover:rotate-[-4deg] z-10'
+                }`}
               >
-                <source src="/video.mp4" type="video/mp4" />
-              </video>
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/Bildschirmaufnahme 2025-12-06 um 20.37.38.mov" type="video/mp4" />
+                </video>
+              </div>
+              
+              {/* Second Card - video.mp4 */}
+              <div 
+                onClick={handleVideoCardClick}
+                className={`relative w-[280px] h-[190px] sm:w-[360px] sm:h-[240px] lg:w-[460px] lg:h-[300px] xl:w-[560px] xl:h-[340px] rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 hover:scale-105 cursor-pointer ${
+                  videoCardsSwapped 
+                    ? 'rotate-[-8deg] hover:rotate-[-4deg] z-10' 
+                    : 'rotate-[8deg] hover:rotate-[4deg] -mt-12 sm:-mt-16 lg:-mt-20 xl:-mt-24 z-0'
+                }`}
+              >
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/video.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </div>
