@@ -285,6 +285,74 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Fylu Marketing & Design",
+            "description": "Professional marketing agency specializing in website development, flyer design, business cards, and comprehensive marketing solutions.",
+            "url": "https://fylumarketing.de",
+            "logo": "https://fylumarketing.de/logo1.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "email": "hello@fylu.com"
+            },
+            "sameAs": [],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "DE"
+            },
+            "areaServed": ["DE", "EU", "Worldwide"],
+            "offers": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Website Development",
+                  "description": "Professional, responsive websites built with modern technologies"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Flyer Design",
+                  "description": "Eye-catching flyer designs that communicate your message effectively"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Business Cards",
+                  "description": "Professional business cards that make a lasting impression"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Marketing Materials",
+                  "description": "Complete marketing solutions including brochures, posters, and more"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Branding & Identity",
+                  "description": "Cohesive brand identity that resonates with your audience"
+                }
+              }
+            ]
+          })
+        }}
+      />
+      
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2 lg:py-1 flex justify-between items-center">
@@ -306,16 +374,16 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 lg:px-6 pt-24 lg:pt-20">
+      <section className="min-h-screen flex items-center justify-center px-4 lg:px-6 pt-24 lg:pt-20" itemScope itemType="https://schema.org/WebPageElement">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6 lg:space-y-8 animate-fade-in-up text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
                 {t.hero.title1}
               </span>
               <br />
               <span className="text-gray-800">{t.hero.title2}</span>
-            </h2>
+            </h1>
             <p className="text-base lg:text-xl text-gray-600 leading-relaxed">
               {t.hero.description}
             </p>
@@ -348,16 +416,16 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} id="services" className={`py-12 lg:py-16 px-4 lg:px-6 bg-white/50 relative overflow-hidden transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section ref={servicesRef} id="services" className={`py-12 lg:py-16 px-4 lg:px-6 bg-white/50 relative overflow-hidden transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`} itemScope itemType="https://schema.org/ItemList">
         {/* Decorative Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl animate-float-delayed"></div>
         <div className="absolute top-1/2 left-5 w-24 h-24 bg-pink-200/30 rounded-full blur-2xl animate-pulse"></div>
         
         <div className="max-w-6xl mx-auto relative">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 lg:mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 lg:mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             {t.services.title}
-          </h3>
+          </h2>
           
           {/* Decorative Frame */}
           <div className="relative">
@@ -379,7 +447,7 @@ export default function Home() {
                 const isFeatured = service.featured && isActive;
                 
                 return (
-                  <div
+                  <article
                     key={index}
                     className={`absolute top-1/2 left-1/2 w-full p-6 sm:p-8 lg:p-10 bg-white rounded-3xl transition-all duration-500 ease-in-out ${isActive ? `shadow-2xl ${services[activeCardIndex].glowColor} hover:shadow-3xl` : 'shadow-xl'} ${isFeatured ? 'ring-4 ring-purple-400 ring-opacity-50 scale-105' : ''}`}
                     style={{
@@ -388,6 +456,8 @@ export default function Home() {
                       opacity: position < 3 ? 1 - position * 0.15 : 0,
                       pointerEvents: position === 0 ? 'auto' : 'none'
                     }}
+                    itemScope
+                    itemType="https://schema.org/Service"
                   >
                     {isFeatured && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
@@ -395,15 +465,15 @@ export default function Home() {
                       </div>
                     )}
                     <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${service.gradient} rounded-2xl mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300 ${isActive ? 'group-hover:scale-110' : ''} ${isFeatured ? 'animate-pulse shadow-lg shadow-purple-500/50' : ''}`}>
-                      <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                       </svg>
                     </div>
-                    <h4 className={`text-2xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-5 text-gray-800 ${isFeatured ? 'text-purple-600' : ''}`}>{service.title}</h4>
-                    <p className="text-base sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                    <h3 className={`text-2xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-5 text-gray-800 ${isFeatured ? 'text-purple-600' : ''}`} itemProp="name">{service.title}</h3>
+                    <p className="text-base sm:text-base lg:text-lg text-gray-600 leading-relaxed" itemProp="description">
                       {service.description}
                     </p>
-                  </div>
+                  </article>
                 );
               })}
             </div>
