@@ -361,7 +361,7 @@ export default function Home() {
           </a>
           <div className="flex gap-3 lg:gap-6 items-center text-xs lg:text-base">
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer hidden sm:block">{t.nav.services}</button>
-            <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hidden sm:block">{t.nav.about}</a>
+            <a href="/about" className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hidden sm:block">{t.nav.about}</a>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 bg-transparent border-none cursor-pointer">{t.nav.contact}</button>
             <button 
               onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
