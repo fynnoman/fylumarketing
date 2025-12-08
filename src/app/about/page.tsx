@@ -74,7 +74,6 @@ export default function AboutPage() {
   const stats = [
     { number: "500+", label: "Projects Completed", gradient: "from-purple-600 to-blue-600" },
     { number: "200+", label: "Happy Clients", gradient: "from-pink-600 to-purple-600" },
-    { number: "50+", label: "Awards Won", gradient: "from-blue-600 to-teal-600" },
     { number: "24/7", label: "Support Available", gradient: "from-orange-600 to-red-600" }
   ];
 
@@ -106,7 +105,7 @@ export default function AboutPage() {
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full border border-purple-200 animate-fade-in-up">
-            <span className="text-purple-600 font-semibold text-sm lg:text-base">✨ About Our Agency</span>
+            <span className="text-purple-600 font-semibold text-sm lg:text-base">About Our Agency</span>
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
@@ -117,12 +116,12 @@ export default function AboutPage() {
             <span className="text-gray-900">Excellence</span>
           </h1>
           
-          <p className="text-xl lg:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl lg:text-2xl text-gray-800 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             We are a team of passionate designers, developers, and marketers dedicated to transforming brands through innovative digital solutions.
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mt-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             {stats.map((stat, index) => (
               <div 
                 key={index}
@@ -157,10 +156,10 @@ export default function AboutPage() {
                     </svg>
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Our Beginning</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-800 leading-relaxed mb-6">
                     Founded in 2025, Fylu Marketing & Design emerged from a simple vision: to help businesses stand out in an increasingly digital world. What started as a small team of creative minds has grown into a full-service marketing agency.
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-800 leading-relaxed">
                     Today, we combine cutting-edge technology with timeless design principles to create experiences that captivate audiences and drive results.
                   </p>
                 </div>
@@ -178,7 +177,7 @@ export default function AboutPage() {
                 <br />
                 <span className="text-gray-900">Meets Strategy</span>
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-xl text-gray-800 leading-relaxed mb-8">
                 We believe that great design is more than aesthetics—it's about solving problems, telling stories, and creating meaningful connections between brands and their audiences.
               </p>
               <div className="space-y-4">
@@ -190,7 +189,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-lg mb-1">Client-Centric Approach</h4>
-                    <p className="text-gray-600">Your success is our mission. We listen, understand, and deliver.</p>
+                    <p className="text-gray-800">Your success is our mission. We listen, understand, and deliver.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -201,7 +200,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-lg mb-1">Data-Driven Results</h4>
-                    <p className="text-gray-600">Every decision backed by insights and analytics.</p>
+                    <p className="text-gray-800">Every decision backed by insights and analytics.</p>
                   </div>
                 </div>
               </div>
@@ -229,26 +228,26 @@ export default function AboutPage() {
                 Our Core Values
               </span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-800 max-w-3xl mx-auto">
               The principles that guide every project, every partnership, and every decision we make.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
             {values.map((value, index) => (
               <div 
                 key={index}
-                className={`group bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-100 hover:scale-105 animate-fade-in-up ${value.delay}`}
+                className={`group bg-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-100 hover:scale-105 animate-fade-in-up ${value.delay} flex flex-col items-center text-center`}
               >
-                <div className={`w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <svg className="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-16 h-16 lg:w-18 lg:h-18 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <svg className="w-8 h-8 lg:w-9 lg:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={value.icon} />
                   </svg>
                 </div>
-                <h3 className={`text-2xl lg:text-3xl font-bold mb-4 bg-gradient-to-r ${value.gradient} bg-clip-text text-transparent`}>
+                <h3 className={`text-xl lg:text-2xl font-bold mb-3 bg-gradient-to-r ${value.gradient} bg-clip-text text-transparent`}>
                   {value.title}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-800 text-base leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -257,43 +256,58 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        id="team"
-        className={`py-20 lg:py-32 px-4 lg:px-6 relative overflow-hidden transition-all duration-1000 ${isTeamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6bTEwIDBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0yNiA0NGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6bTEwIDBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
-        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 lg:mb-8">
-            Ready to Transform Your Brand?
-          </h2>
-          <p className="text-xl lg:text-2xl text-white/90 mb-10 lg:mb-12 leading-relaxed">
-            Let's collaborate to create something extraordinary. Your vision combined with our expertise equals unmatched results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/#contact"
-              className="px-8 lg:px-10 py-4 lg:py-5 bg-white text-purple-600 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
-            >
-              Start Your Project
-            </Link>
-            <Link 
-              href="/"
-              className="px-8 lg:px-10 py-4 lg:py-5 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
-            >
-              View Our Work
-            </Link>
+      {/* My Vision Section */}
+      <section className="py-20 lg:py-32 px-4 lg:px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Photo */}
+            <div className="order-2 lg:order-1">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  {/* Replace this Image src with your actual photo path */}
+                  <div className="aspect-square bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
+                    <p className="text-gray-500 text-center px-8">Add your photo here<br/>(Replace in /public folder)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Vision Text */}
+            <div className="order-1 lg:order-2">
+              <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full text-purple-600 font-semibold text-sm mb-4">
+                My Vision
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Building Brands
+                </span>
+                <br />
+                <span className="text-gray-900">That Inspire</span>
+              </h2>
+              <div className="space-y-4 text-gray-800 text-lg leading-relaxed">
+                <p>
+                  My vision is to empower businesses of all sizes to reach their full potential through innovative design and strategic marketing solutions. I believe that every brand has a unique story to tell, and it's our mission to help them tell it beautifully.
+                </p>
+                <p>
+                  In today's digital landscape, standing out is more important than ever. That's why we're committed to delivering not just websites and marketing materials, but complete brand experiences that resonate with audiences and drive meaningful results.
+                </p>
+                <p>
+                  Together, we can create something extraordinary that not only meets your business goals but exceeds your wildest expectations.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 lg:px-6">
+      <footer className="bg-white text-gray-800 py-12 px-4 lg:px-6 border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
-          <Image src="/logo1.png" alt="Fylu Marketing & Design" width={180} height={50} className="mx-auto mb-6 invert" />
-          <p className="text-gray-400 mb-6">Creating exceptional digital experiences since 2025</p>
+          <Link href="/" className="inline-block transition-opacity hover:opacity-80">
+            <Image src="/logo1.png" alt="Fylu Marketing & Design" width={180} height={50} className="mx-auto mb-6 w-auto h-16" />
+          </Link>
+          <p className="text-gray-600 mb-6">Creating exceptional digital experiences since 2025</p>
           <p className="text-sm text-gray-500">© 2025 Fylu Marketing & Design. All rights reserved.</p>
         </div>
       </footer>
