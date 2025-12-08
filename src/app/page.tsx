@@ -83,7 +83,8 @@ export default function Home() {
         privacy: 'Datenschutz',
         terms: 'Nutzungsbedingungen',
         contact: 'Kontakt',
-        copyright: '© 2025 Fylu Marketing & Design. Alle Rechte vorbehalten.'
+        copyright: '© 2025 Fylu Marketing & Design. Alle Rechte vorbehalten.',
+        pricingNote: 'Unsere Preise variieren und werden speziell auf die individuellen Anforderungen unserer Kunden zugeschnitten.'
       }
     },
     en: {
@@ -154,7 +155,8 @@ export default function Home() {
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
         contact: 'Contact',
-        copyright: '© 2025 Fylu Marketing & Design. All rights reserved.'
+        copyright: '© 2025 Fylu Marketing & Design. All rights reserved.',
+        pricingNote: 'Our prices vary and are specifically tailored to the individual requests of our clients.'
       }
     }
   };
@@ -551,6 +553,7 @@ export default function Home() {
             <span className="text-gray-400">•</span>
             <a href="#contact" className="text-gray-600 hover:text-purple-600 transition-colors">{t.footer.contact}</a>
           </div>
+          <p className="text-xs lg:text-sm text-gray-500 italic mb-3">{t.footer.pricingNote}</p>
           <p className="text-xs lg:text-sm text-gray-500">{t.footer.copyright}</p>
         </div>
       </footer>

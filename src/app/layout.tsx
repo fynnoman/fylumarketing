@@ -33,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preload" href="/video2.mov" as="video" type="video/mp4" />
+        {/* no-op: tiny invisible comment to create a trivial change */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
