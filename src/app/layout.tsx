@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/logo1.png',
+        url: '/logomase.png',
         width: 1200,
         height: 630,
         alt: 'Fylu Marketing & Design Logo',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Fylu Marketing & Design | Professional Marketing Agency",
     description: "Transform your brand with professional website development, stunning flyer designs, and comprehensive marketing solutions.",
-    images: ['/logo1.png'],
+    images: ['/logomase.png'],
   },
   robots: {
     index: true,
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
       { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/logo1.png',
+    apple: '/logomase.png',
   },
 };
 

@@ -227,7 +227,7 @@ export default function AboutPage() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-white/80'}`}>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6 flex justify-between items-center">
           <Link href="/" className="transition-opacity hover:opacity-80">
-            <Image src="/logo1.png" alt="Fylu Web Design Logo" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
+            <Image src="/logomase.png" alt="Fylu Web Design Logo" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
           </Link>
           <div className="flex gap-3 lg:gap-6 items-center text-sm lg:text-lg">
             <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.about}</Link>
@@ -451,7 +451,7 @@ export default function AboutPage() {
             {/* Company Info */}
             <div>
               <Link href="/" className="inline-block transition-opacity hover:opacity-80 mb-4">
-                <Image src="/logo1.png" alt="Fylu Marketing & Design Logo" width={180} height={50} className="w-auto h-14 object-contain" />
+                <Image src="/logomase.png" alt="Fylu Marketing & Design Logo" width={180} height={50} className="w-auto h-14 object-contain" />
               </Link>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t.footer.tagline}

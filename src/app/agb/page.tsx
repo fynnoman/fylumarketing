@@ -63,7 +63,7 @@ export default function AGBPage() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/90 backdrop-blur-lg shadow-xl' : 'bg-white/80'}`}>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6 flex justify-between items-center">
           <Link href="/" className="transition-opacity hover:opacity-80">
-            <Image src="/logo1.png" alt="Fylu Web Design" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
+            <Image src="/logomase.png" alt="Fylu Web Design" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
           </Link>
           <div className="flex gap-3 lg:gap-6 items-center">
             <button 
@@ -160,7 +160,7 @@ export default function AGBPage() {
       <footer className="bg-white text-gray-800 py-12 px-4 lg:px-6 border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
           <Link href="/" className="inline-block transition-opacity hover:opacity-80">
-            <Image src="/logo1.png" alt="Fylu Marketing & Design" width={180} height={50} className="mx-auto mb-6 w-auto h-16" />
+            <Image src="/logomase.png" alt="Fylu Marketing & Design" width={180} height={50} className="mx-auto mb-6 w-auto h-16" />
           </Link>
           <p className="text-gray-600 mb-6">{t.footer.tagline}</p>
           <p className="text-sm text-gray-500">{t.footer.copyright}</p>
