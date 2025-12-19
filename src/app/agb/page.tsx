@@ -88,7 +88,7 @@ export default function AGBPage() {
           {/* Header */}
           <div className="text-center mb-12 lg:mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
                 {t.title}
               </span>
             </h1>

@@ -251,7 +251,7 @@ export default function AboutPage() {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
               {t.hero.title1}
             </span>
             <br />
@@ -310,7 +310,7 @@ export default function AboutPage() {
                 {t.story.badge}
               </span>
               <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
                   {t.story.title1}
                 </span>
                 <br />
@@ -363,7 +363,7 @@ export default function AboutPage() {
               {t.values.badge}
             </span>
             <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
                 {t.values.title}
               </span>
             </h2>
@@ -421,7 +421,7 @@ export default function AboutPage() {
                 {t.vision.badge}
               </span>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
                   {t.vision.title1}
                 </span>
                 <br />

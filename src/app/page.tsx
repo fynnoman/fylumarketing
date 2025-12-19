@@ -270,7 +270,7 @@ export default function Home() {
             {/* Hero Text */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-fade-in-up text-center lg:text-left px-2 sm:px-0">
               <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent animate-gradient">
+                <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent animate-gradient">
                   {t.hero.title1}
                 </span>
                 <br />
@@ -330,7 +330,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12 items-center lg:items-start">
           {/* Website Service Card - Full width on mobile, 45% on desktop */}
           <div className="w-full lg:w-[45%] rounded-[25px] sm:rounded-[30px] lg:rounded-[50px] bg-white shadow-lg p-5 sm:p-7 md:p-10 lg:p-12 xl:p-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-5 sm:mb-6 lg:mb-8 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-5 sm:mb-6 lg:mb-8 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent text-center">
               {t.websiteService.title}
             </h2>
             <div className="text-gray-800 space-y-3 sm:space-y-4 lg:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed text-center max-h-[400px] sm:max-h-[500px] lg:max-h-[600px] overflow-y-auto overscroll-contain">
@@ -346,7 +346,7 @@ export default function Home() {
               <p dangerouslySetInnerHTML={{ 
                 __html: t.websiteService.paragraph4.replace(/<strong>/g, '<span class="font-bold text-gray-900">').replace(/<\/strong>/g, '</span>')
               }} />
-              <p className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              <p className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
                 {t.websiteService.paragraph5}
               </p>
               <div className="mt-5 sm:mt-6 lg:mt-8 pb-2">
@@ -362,7 +362,7 @@ export default function Home() {
 
           {/* Latest Artworks Section - Below on mobile, right side on desktop */}
           <div className="w-full lg:w-[50%] flex flex-col items-center">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-6 sm:mb-8 lg:mb-12 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent text-center px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-6 sm:mb-8 lg:mb-12 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent text-center px-4">
               {t.latestArtworks.title}
             </h3>
             
@@ -432,7 +432,7 @@ export default function Home() {
       <section className="py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-6 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 lg:mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 lg:mb-4 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
               {t.clients.title}
             </h3>
             <p className="text-sm sm:text-base lg:text-xl text-gray-600 px-4">{t.clients.subtitle}</p>
@@ -465,7 +465,7 @@ export default function Home() {
       {/* CTA Section */}
       <section ref={ctaRef} id="contact" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-6 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent px-4">{t.cta.title}</h3>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent px-4">{t.cta.title}</h3>
           <p className="text-sm sm:text-base lg:text-xl mb-5 sm:mb-6 lg:mb-8 text-gray-700 px-4 max-w-2xl mx-auto leading-relaxed">
             {t.cta.description}
           </p>
