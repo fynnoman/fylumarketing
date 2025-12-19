@@ -230,9 +230,9 @@ export default function AboutPage() {
             <Image src="/logomase.png" alt="Fylu Web Design Logo" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
           </Link>
           <div className="flex gap-3 lg:gap-6 items-center text-sm lg:text-lg">
-            <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.about}</Link>
-            <Link href="/services" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.services}</Link>
-            <Link href="/#contact" className="text-gray-700 hover:text-gray-900 transition-colors duration-300">{t.nav.contact}</Link>
+            <Link href="/about" className="relative text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.about}</Link>
+            <Link href="/services" className="relative text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.services}</Link>
+            <Link href="/#contact" className="relative text-gray-700 hover:text-gray-900 transition-colors duration-300 py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.contact}</Link>
           </div>
         </div>
       </nav>

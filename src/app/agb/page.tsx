@@ -68,7 +68,7 @@ export default function AGBPage() {
           <div className="flex gap-3 lg:gap-6 items-center">
             <Link 
               href="/"
-              className="px-6 lg:px-8 py-2 lg:py-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="relative px-6 lg:px-8 py-2 lg:py-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               {t.nav.backToHome}
             </Link>
