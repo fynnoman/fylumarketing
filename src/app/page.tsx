@@ -292,7 +292,7 @@ export default function Home() {
           
           {/* Right Column - Video */}
           <div className="relative order-1 lg:order-2 mt-0 lg:mt-0 flex items-center justify-center">
-            <div className="relative h-[200px] xs:h-[220px] sm:h-[260px] md:h-[300px] lg:h-[359px] xl:h-[399px] w-full">
+            <div className="relative h-[280px] xs:h-[320px] sm:h-[360px] md:h-[400px] lg:h-[480px] xl:h-[520px] w-full">
               <video 
                 ref={videoRef}
                 autoPlay 
