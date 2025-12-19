@@ -273,7 +273,7 @@ export default function ServicesPage() {
                   className="group bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-200"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-16 h-16 bg-[#49B1CE] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-[#163159] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                     </svg>
@@ -283,7 +283,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3">
                     {serviceData.features.map((feature: string, idx: number) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-[#49B1CE] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#163159] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <span className="text-gray-700 text-sm">{feature}</span>
@@ -306,7 +306,7 @@ export default function ServicesPage() {
           <p className="text-base lg:text-xl mb-6 lg:mb-8 text-gray-700">
             {t.cta.description}
           </p>
-          <a href="mailto:fynnschulzonline@gmail.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-[#49B1CE] text-white rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:bg-[#3a9bb8]">
+          <a href="mailto:fynnschulzonline@gmail.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-[#163159] text-white rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:bg-[#0f2340]">
             {t.cta.button}
           </a>
         </div>
