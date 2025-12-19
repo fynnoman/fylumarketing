@@ -30,7 +30,11 @@ export const metadata: Metadata = {
     "SEO optimization",
     "corporate identity",
     "brand design",
-    "marketing solutions"
+    "marketing solutions",
+    "Fylu Marketing",
+    "Webdesign Deutschland",
+    "Marketing Agentur",
+    "Professionelles Webdesign"
   ],
   authors: [{ name: "Fylu Marketing & Design" }],
   creator: "Fylu Marketing & Design",
@@ -42,22 +46,18 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://fylumarketing.de'),
   alternates: {
-    canonical: '/',
-    languages: {
-      'de': '/de',
-      'en': '/en',
-    },
+    canonical: 'https://fylumarketing.de',
   },
   openGraph: {
     title: "Fylu Marketing & Design | Professional Marketing Agency",
     description: "Transform your brand with professional website development, stunning flyer designs, and comprehensive marketing solutions tailored to your business needs.",
     url: 'https://fylumarketing.de',
     siteName: 'Fylu Marketing & Design',
-    locale: 'en_US',
+    locale: 'de_DE',
     type: 'website',
     images: [
       {
-        url: '/logomase.png',
+        url: 'https://fylumarketing.de/logomase.png',
         width: 1200,
         height: 630,
         alt: 'Fylu Marketing & Design Logo',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Fylu Marketing & Design | Professional Marketing Agency",
     description: "Transform your brand with professional website development, stunning flyer designs, and comprehensive marketing solutions.",
-    images: ['/logomase.png'],
+    images: ['https://fylumarketing.de/logomase.png'],
   },
   robots: {
     index: true,
@@ -81,16 +81,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
   icons: {
-    icon: [
-      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
-    ],
+    icon: '/logomase.png',
     apple: '/logomase.png',
   },
+  category: 'business',
 };
 
 export default function RootLayout({
@@ -99,12 +94,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="de" className="scroll-smooth">
       <head>
-        <link rel="preload" href="/video2.mov" as="video" type="video/mp4" />
+        <link rel="preload" href="/dadaadad.mov" as="video" type="video/mp4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#9333ea" />
-        <link rel="canonical" href="https://fylumarketing.de" />
+        <meta name="theme-color" content="#163159" />
+        <meta name="google-site-verification" content="your-google-verification-code" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
