@@ -255,9 +255,9 @@ export default function Home() {
             <Image src="/logomase.png" alt="Fylu Web Design Logo" width={180} height={50} className="w-auto h-10 sm:h-12 lg:h-16 object-contain" />
           </button>
           <div className="flex gap-2 sm:gap-3 lg:gap-6 items-center text-sm sm:text-base lg:text-lg">
-            <a href="/about" className="text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2">{t.nav.about}</a>
-            <a href="/services" className="text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2">{t.nav.services}</a>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 bg-transparent border-none cursor-pointer touch-manipulation py-2 px-1">{t.nav.contact}</button>
+            <a href="/about" className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.about}</a>
+            <a href="/services" className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.services}</a>
+            <button onClick={() => scrollToSection('contact')} className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 bg-transparent border-none cursor-pointer touch-manipulation py-2 px-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.contact}</button>
           </div>
         </div>
       </nav>
