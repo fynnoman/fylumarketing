@@ -238,12 +238,6 @@ export default function ServicesPage() {
             <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.about}</Link>
             <Link href="/services" className="text-gray-900 font-semibold">{t.nav.services}</Link>
             <Link href="/#contact" className="text-gray-700 hover:text-gray-900 transition-colors duration-300">{t.nav.contact}</Link>
-            <button 
-              onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
-              className="ml-2 lg:ml-4 px-4 lg:px-5 py-2 lg:py-3 bg-[#49B1CE] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-lg hover:bg-[#3a9bb8]"
-            >
-              {language === 'de' ? 'DE' : 'EN'}
-            </button>
           </div>
         </div>
       </nav>
@@ -312,7 +306,7 @@ export default function ServicesPage() {
           <p className="text-base lg:text-xl mb-6 lg:mb-8 text-gray-700">
             {t.cta.description}
           </p>
-          <a href="mailto:hello@fylu.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-[#49B1CE] text-white rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:bg-[#3a9bb8]">
+          <a href="mailto:fynnschulzonline@gmail.com" className="inline-block px-8 lg:px-10 py-4 lg:py-5 bg-[#49B1CE] text-white rounded-full font-bold text-base lg:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:bg-[#3a9bb8]">
             {t.cta.button}
           </a>
         </div>
@@ -357,7 +351,7 @@ export default function ServicesPage() {
               <h3 className="text-gray-900 font-bold text-lg mb-4">{t.footer.contact}</h3>
               <ul className="space-y-2 text-sm">
                 <li className="text-gray-600">+49 151 684 88999</li>
-                <li><a href="mailto:hello@fylu.com" className="text-gray-600 hover:text-gray-900 transition-colors">hello@fylu.com</a></li>
+                <li><a href="mailto:fynnschulzonline@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">fynnschulzonline@gmail.com</a></li>
                 <li className="text-gray-600">{t.footer.country}</li>
               </ul>
             </div>

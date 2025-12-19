@@ -233,12 +233,6 @@ export default function AboutPage() {
             <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.about}</Link>
             <Link href="/services" className="text-gray-700 hover:text-gray-900 transition-colors duration-300 hidden sm:block">{t.nav.services}</Link>
             <Link href="/#contact" className="text-gray-700 hover:text-gray-900 transition-colors duration-300">{t.nav.contact}</Link>
-            <button 
-              onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
-              className="ml-2 lg:ml-4 px-4 lg:px-5 py-2 lg:py-3 bg-[#49B1CE] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-lg hover:bg-[#3a9bb8]"
-            >
-              {language === 'de' ? 'DE' : 'EN'}
-            </button>
           </div>
         </div>
       </nav>
@@ -482,7 +476,7 @@ export default function AboutPage() {
               <h3 className="text-gray-900 font-bold text-lg mb-4">{t.footer.contact}</h3>
               <ul className="space-y-2 text-sm">
                 <li className="text-gray-600">+49 151 684 88999</li>
-                <li><a href="mailto:hello@fylu.com" className="text-gray-600 hover:text-gray-900 transition-colors">hello@fylu.com</a></li>
+                <li><a href="mailto:fynnschulzonline@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">fynnschulzonline@gmail.com</a></li>
                 <li className="text-gray-600">{t.footer.country}</li>
               </ul>
             </div>

@@ -66,12 +66,6 @@ export default function AGBPage() {
             <Image src="/logomase.png" alt="Fylu Web Design" width={180} height={50} className="w-auto h-12 lg:h-16 object-contain" />
           </Link>
           <div className="flex gap-3 lg:gap-6 items-center">
-            <button 
-              onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
-              className="px-4 lg:px-5 py-2 lg:py-3 bg-white/80 backdrop-blur-sm text-gray-800 rounded-full font-semibold hover:bg-white transition-all duration-300 text-sm lg:text-lg"
-            >
-              {language === 'de' ? 'EN' : 'DE'}
-            </button>
             <Link 
               href="/"
               className="px-6 lg:px-8 py-2 lg:py-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
@@ -146,7 +140,7 @@ export default function AGBPage() {
                 {t.contact.text}
               </p>
               <Link 
-                href="mailto:hello@fylu.com"
+                href="mailto:fynnschulzonline@gmail.com"
                 className="inline-block px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 {language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'}
