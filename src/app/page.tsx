@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CookieBanner from '@/components/CookieBanner';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -525,14 +526,18 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
               <p className="text-xs text-gray-500 text-center md:text-left">{t.footer.copyright}</p>
               <div className="flex gap-4 sm:gap-6 text-xs flex-wrap justify-center">
-                <a href="#" className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation">{t.footer.privacy}</a>
+                <Link href="/impressum" className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation">Impressum</Link>
+                <Link href="/datenschutz" className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation">{t.footer.privacy}</Link>
                 <Link href="/agb" className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation">{t.footer.terms}</Link>
-                <a href="#" className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation">{t.footer.cookieSettings}</a>
+                <button onClick={() => localStorage.removeItem('cookieConsent')} className="text-gray-500 hover:text-gray-900 active:text-gray-900 transition-colors py-1 touch-manipulation bg-transparent border-none cursor-pointer">{t.footer.cookieSettings}</button>
               </div>
             </div>
           </div>
         </div>
       </footer>
+      
+      {/* Cookie Banner */}
+      <CookieBanner />
     </div>
   );
 }

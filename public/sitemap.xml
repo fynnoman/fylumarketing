@@ -31,5 +31,17 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://fylumarketing.de/datenschutz</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fylumarketing.de/impressum</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
 

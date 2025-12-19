@@ -487,9 +487,10 @@ export default function AboutPage() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-gray-500">{t.footer.copyright}</p>
               <div className="flex gap-6 text-xs">
-                <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">{t.footer.privacy}</a>
+                <Link href="/impressum" className="text-gray-500 hover:text-gray-900 transition-colors">Impressum</Link>
+                <Link href="/datenschutz" className="text-gray-500 hover:text-gray-900 transition-colors">{t.footer.privacy}</Link>
                 <Link href="/agb" className="text-gray-500 hover:text-gray-900 transition-colors">{t.footer.agb}</Link>
-                <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">{t.footer.cookieSettings}</a>
+                <a href="/#cookie-settings" className="text-gray-500 hover:text-gray-900 transition-colors">{t.footer.cookieSettings}</a>
               </div>
             </div>
           </div>
