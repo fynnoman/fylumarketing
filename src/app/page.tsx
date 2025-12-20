@@ -301,6 +301,8 @@ export default function Home() {
                   muted 
                   playsInline
                   preload="auto"
+                  webkit-playsinline="true"
+                  x5-playsinline="true"
                   className="w-full h-full object-cover"
                   style={{
                     maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
@@ -308,10 +310,19 @@ export default function Home() {
                   }}
                   onLoadedData={(e) => {
                     const video = e.target as HTMLVideoElement;
+                    video.muted = true;
                     video.play().catch(() => {
-                      video.muted = true;
-                      video.play();
+                      console.log('Autoplay blocked, trying again...');
+                      setTimeout(() => {
+                        video.play();
+                      }, 100);
                     });
+                  }}
+                  onCanPlay={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    if (video.paused) {
+                      video.play().catch(() => {});
+                    }
                   }}
                 >
                   <source src="/heading2.mov" type="video/mp4" />
