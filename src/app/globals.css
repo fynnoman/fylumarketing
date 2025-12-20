@@ -161,26 +161,26 @@ video {
 /* Extra Small Phones - iPhone SE, etc. */
 @media screen and (max-width: 374px) {
   .hero-video-overlay {
-    width: 75px;
-    right: -18px;
+    width: 95px;
+    right: -25px;
   }
   
   .project-video-overlay {
-    width: 65px;
-    right: -15px;
+    width: 80px;
+    right: -20px;
   }
 }
 
 /* Standard Phones - iPhone 12/13/14/15, Samsung, etc. */
 @media screen and (min-width: 375px) and (max-width: 639px) {
   .hero-video-overlay {
-    width: 80px;
-    right: -18px;
+    width: 100px;
+    right: -25px;
   }
   
   .project-video-overlay {
-    width: 68px;
-    right: -15px;
+    width: 85px;
+    right: -20px;
   }
 }
 
