@@ -320,7 +320,7 @@ export default function Home() {
                 Your browser does not support the video tag.
               </video>
               {/* White overlay to cover orange stripe */}
-              <div className="absolute top-0 right-0 w-[138px] h-full bg-white z-10"></div>
+              <div className="hero-video-overlay"></div>
             </div>
           </div>
         </div>
@@ -399,7 +399,7 @@ export default function Home() {
                 <source src="/varsmac.mov" type="video/mp4" />
               </video>
               {/* White overlay to cover watermark */}
-              <div className="absolute top-0 right-0 w-[120px] h-full bg-white z-10"></div>
+              <div className="project-video-overlay"></div>
             </div>
 
             {/* Second video - taskeymac.mov */}
@@ -431,7 +431,7 @@ export default function Home() {
                 <source src="/taskeymac.mov" type="video/mp4" />
               </video>
               {/* White overlay to cover watermark */}
-              <div className="absolute top-0 right-0 w-[120px] h-full bg-white z-10"></div>
+              <div className="project-video-overlay"></div>
             </div>
           </div>
         </div>

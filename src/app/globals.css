@@ -127,3 +127,73 @@ video {
 .animate-shine {
   animation: shine 1.5s ease-in-out;
 }
+
+/* Responsive Video Watermark Overlays */
+/* Hero Video Overlay - heading2.mov */
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: white;
+  z-index: 10;
+  width: 138px; /* Desktop default - applies to all screens unless overridden */
+}
+
+/* Project Videos Overlays - varsmac.mov and taskeymac.mov */
+.project-video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: white;
+  z-index: 10;
+  width: 120px; /* Desktop default - applies to all screens unless overridden */
+}
+
+/* Only apply smaller overlays on mobile/tablet devices */
+/* Mobile Devices - Extra Small (iPhone SE, small phones) */
+@media screen and (max-width: 374px) {
+  .hero-video-overlay {
+    width: 45px;
+  }
+  
+  .project-video-overlay {
+    width: 38px;
+  }
+}
+
+/* Mobile Devices - Small (iPhone 12/13/14/15, standard phones) */
+@media screen and (min-width: 375px) and (max-width: 639px) {
+  .hero-video-overlay {
+    width: 50px;
+  }
+  
+  .project-video-overlay {
+    width: 42px;
+  }
+}
+
+/* Tablet Devices - Portrait */
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .hero-video-overlay {
+    width: 65px;
+  }
+  
+  .project-video-overlay {
+    width: 55px;
+  }
+}
+
+/* Tablet Devices - Landscape */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-video-overlay {
+    width: 85px;
+  }
+  
+  .project-video-overlay {
+    width: 72px;
+  }
+}
+
+/* For all screens 1024px and above, use the default desktop values (138px and 120px) */
