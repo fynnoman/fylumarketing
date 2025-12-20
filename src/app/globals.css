@@ -212,12 +212,12 @@ video {
 
 @media screen and (min-width: 1024px) {
   .hero-video-overlay {
-    width: 138px;
-    right: 0;
+    width: 170px;
+    right: -15px;
   }
   
   .project-video-overlay {
     width: 120px;
-    right: 0;
+    right: -15px;
   }
 }

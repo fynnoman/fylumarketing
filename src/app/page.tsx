@@ -361,8 +361,8 @@ export default function Home() {
             </div>
             
             {/* Right Column - Video */}
-            <div className="relative mt-0 flex items-start justify-center lg:-mt-12">
-              <div className="relative h-[680px] xl:h-[760px] w-full">
+            <div className="relative mt-0 flex items-start justify-center lg:mt-8">
+              <div className="relative h-[600px] xl:h-[680px] w-full">
                 <video 
                   autoPlay 
                   loop 
