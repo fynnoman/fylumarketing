@@ -161,18 +161,31 @@ video {
 /* Extra Small Phones - iPhone SE, etc. */
 @media screen and (max-width: 374px) {
   .hero-video-overlay {
-    width: 70px;
-    right: 0;
+    width: 75px;
+    right: -18px;
   }
   
   .project-video-overlay {
-    width: 60px;
-    right: 0;
+    width: 65px;
+    right: -15px;
   }
 }
 
 /* Standard Phones - iPhone 12/13/14/15, Samsung, etc. */
 @media screen and (min-width: 375px) and (max-width: 639px) {
+  .hero-video-overlay {
+    width: 80px;
+    right: -18px;
+  }
+  
+  .project-video-overlay {
+    width: 68px;
+    right: -15px;
+  }
+}
+
+/* Tablets Portrait */
+@media screen and (min-width: 640px) and (max-width: 767px) {
   .hero-video-overlay {
     width: 75px;
     right: 0;
@@ -184,28 +197,15 @@ video {
   }
 }
 
-/* Tablets Portrait */
-@media screen and (min-width: 640px) and (max-width: 767px) {
-  .hero-video-overlay {
-    width: 90px;
-    right: 0;
-  }
-  
-  .project-video-overlay {
-    width: 78px;
-    right: 0;
-  }
-}
-
 /* Tablets Landscape */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .hero-video-overlay {
-    width: 110px;
+    width: 95px;
     right: 0;
   }
   
   .project-video-overlay {
-    width: 95px;
+    width: 82px;
     right: 0;
   }
 }
