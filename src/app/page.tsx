@@ -258,7 +258,7 @@ export default function Home() {
           <div className="flex gap-2 sm:gap-3 lg:gap-6 items-center text-sm sm:text-base lg:text-lg">
             <a href="/about" className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.about}</a>
             <a href="/services" className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 hidden sm:block touch-manipulation py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.services}</a>
-            <button onClick={() => scrollToSection('contact')} className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 bg-transparent border-none cursor-pointer touch-manipulation py-2 px-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full">{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('contact')} className="relative text-gray-700 hover:text-gray-900 active:text-gray-900 transition-colors duration-300 touch-manipulation py-2 px-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#163159] after:transition-all after:duration-300 hover:after:w-full bg-transparent border-none cursor-pointer">{t.nav.contact}</button>
           </div>
         </div>
       </nav>
@@ -402,15 +402,36 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-[120px] h-full bg-white z-10"></div>
             </div>
 
-            {/* Image below video */}
-            <div className="w-full max-w-sm lg:max-w-md mt-8 sm:mt-10 lg:mt-12">
-              <Image 
-                src="/1E7120C2-2C24-4154-B7EF-6D17C34844F1.png" 
-                alt="Project showcase"
-                width={800}
-                height={600}
+            {/* Second video - taskeymac.mov */}
+            <div className="w-full max-w-2xl lg:max-w-none relative mt-8 sm:mt-10 lg:mt-12">
+              <video 
+                autoPlay 
+                muted 
+                playsInline
+                preload="auto"
                 className="w-full h-auto object-cover opacity-90"
-              />
+                onLoadedData={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.play().catch(() => {
+                    video.muted = true;
+                    video.play();
+                  });
+                }}
+                onEnded={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  setTimeout(() => {
+                    video.currentTime = 0;
+                    video.play().catch(() => {
+                      video.muted = true;
+                      video.play();
+                    });
+                  }, 10000); // 10 seconds delay
+                }}
+              >
+                <source src="/taskeymac.mov" type="video/mp4" />
+              </video>
+              {/* White overlay to cover watermark */}
+              <div className="absolute top-0 right-0 w-[120px] h-full bg-white z-10"></div>
             </div>
           </div>
         </div>
