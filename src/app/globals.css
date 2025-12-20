@@ -142,7 +142,6 @@ video {
   height: 100%;
   background-color: white;
   z-index: 10;
-  width: 138px; /* Desktop default - applies to all screens unless overridden */
 }
 
 /* Project Videos Overlays - varsmac.mov and taskeymac.mov */
@@ -153,60 +152,76 @@ video {
   height: 100%;
   background-color: white;
   z-index: 10;
-  width: 120px; /* Desktop default - applies to all screens unless overridden */
 }
 
-/* Only apply smaller overlays on mobile/tablet devices */
-/* Mobile Devices - Extra Small (iPhone SE, small phones) */
+/* ============================================ */
+/* MOBILE VERSION (bis 1023px) */
+/* ============================================ */
+
+/* Extra Small Phones - iPhone SE, etc. */
 @media screen and (max-width: 374px) {
   .hero-video-overlay {
-    width: 60px;
-    right: -5px;
+    width: 70px;
+    right: 0;
   }
   
   .project-video-overlay {
-    width: 52px;
-    right: -5px;
+    width: 60px;
+    right: 0;
   }
 }
 
-/* Mobile Devices - Small (iPhone 12/13/14/15, standard phones) */
+/* Standard Phones - iPhone 12/13/14/15, Samsung, etc. */
 @media screen and (min-width: 375px) and (max-width: 639px) {
   .hero-video-overlay {
-    width: 65px;
-    right: -5px;
+    width: 75px;
+    right: 0;
   }
   
   .project-video-overlay {
-    width: 55px;
-    right: -5px;
+    width: 65px;
+    right: 0;
   }
 }
 
-/* Tablet Devices - Portrait */
+/* Tablets Portrait */
 @media screen and (min-width: 640px) and (max-width: 767px) {
   .hero-video-overlay {
-    width: 80px;
+    width: 90px;
     right: 0;
   }
   
   .project-video-overlay {
-    width: 68px;
+    width: 78px;
     right: 0;
   }
 }
 
-/* Tablet Devices - Landscape */
+/* Tablets Landscape */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .hero-video-overlay {
-    width: 100px;
+    width: 110px;
     right: 0;
   }
   
   .project-video-overlay {
-    width: 85px;
+    width: 95px;
     right: 0;
   }
 }
 
-/* For all screens 1024px and above, use the default desktop values (138px and 120px) */
+/* ============================================ */
+/* DESKTOP/MACBOOK VERSION (ab 1024px) */
+/* ============================================ */
+
+@media screen and (min-width: 1024px) {
+  .hero-video-overlay {
+    width: 138px;
+    right: 0;
+  }
+  
+  .project-video-overlay {
+    width: 120px;
+    right: 0;
+  }
+}
