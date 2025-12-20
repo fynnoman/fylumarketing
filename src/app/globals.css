@@ -20,12 +20,17 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Force white background on all devices */
+html, body, #__next, main {
+  background-color: #ffffff !important;
 }
 
 /* Mobile optimizations */
@@ -155,44 +160,52 @@ video {
 /* Mobile Devices - Extra Small (iPhone SE, small phones) */
 @media screen and (max-width: 374px) {
   .hero-video-overlay {
-    width: 45px;
+    width: 60px;
+    right: -5px;
   }
   
   .project-video-overlay {
-    width: 38px;
+    width: 52px;
+    right: -5px;
   }
 }
 
 /* Mobile Devices - Small (iPhone 12/13/14/15, standard phones) */
 @media screen and (min-width: 375px) and (max-width: 639px) {
   .hero-video-overlay {
-    width: 50px;
+    width: 65px;
+    right: -5px;
   }
   
   .project-video-overlay {
-    width: 42px;
+    width: 55px;
+    right: -5px;
   }
 }
 
 /* Tablet Devices - Portrait */
 @media screen and (min-width: 640px) and (max-width: 767px) {
   .hero-video-overlay {
-    width: 65px;
+    width: 80px;
+    right: 0;
   }
   
   .project-video-overlay {
-    width: 55px;
+    width: 68px;
+    right: 0;
   }
 }
 
 /* Tablet Devices - Landscape */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .hero-video-overlay {
-    width: 85px;
+    width: 100px;
+    right: 0;
   }
   
   .project-video-overlay {
-    width: 72px;
+    width: 85px;
+    right: 0;
   }
 }
 
