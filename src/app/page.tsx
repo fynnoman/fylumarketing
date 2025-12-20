@@ -265,62 +265,117 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-6 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12" itemScope itemType="https://schema.org/WebPageElement">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 w-full items-center">
-          {/* Left Column - Text Only */}
-          <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 order-2 lg:order-1">
-            {/* Hero Text */}
-            <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-fade-in-up text-center lg:text-left px-2 sm:px-0">
+        <div className="max-w-7xl mx-auto w-full">
+          {/* Mobile Layout: Heading first, then Video */}
+          <div className="flex flex-col lg:hidden gap-6 items-center">
+            {/* Hero Text - Mobile */}
+            <div className="space-y-3 sm:space-y-4 animate-fade-in-up text-center px-2 sm:px-0 w-full">
               <h1 className="font-extrabold leading-[1.2] pb-2">
-                <span className="block text-4xl xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                <span className="block text-4xl xs:text-5xl sm:text-6xl mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                   {t.hero.title1}
                 </span>
-                <span className="block text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-[#163159] via-[#1e4173] to-[#163159] bg-clip-text text-transparent">
+                <span className="block text-3xl xs:text-4xl sm:text-5xl bg-gradient-to-r from-[#163159] via-[#1e4173] to-[#163159] bg-clip-text text-transparent">
                   {t.hero.title2}
                 </span>
               </h1>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl mx-auto">
                 {t.hero.description}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2">
-                <a href="#contact" className="px-6 sm:px-7 lg:px-8 py-3.5 sm:py-4 bg-[#163159] text-white rounded-full font-semibold hover:shadow-2xl active:scale-95 transition-all duration-300 text-center hover:bg-[#0f2340] touch-manipulation text-sm sm:text-base min-h-[48px] flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2">
+                <a href="#contact" className="px-6 sm:px-7 py-3.5 sm:py-4 bg-[#163159] text-white rounded-full font-semibold hover:shadow-2xl active:scale-95 transition-all duration-300 text-center hover:bg-[#0f2340] touch-manipulation text-sm sm:text-base min-h-[48px] flex items-center justify-center">
                   {t.hero.getStarted}
                 </a>
-                <a href="/about" className="px-6 sm:px-7 lg:px-8 py-3.5 sm:py-4 border-2 border-[#163159] text-[#163159] rounded-full font-semibold hover:bg-[#163159] hover:text-white active:scale-95 transition-all duration-300 text-center touch-manipulation text-sm sm:text-base min-h-[48px] flex items-center justify-center">
+                <a href="/about" className="px-6 sm:px-7 py-3.5 sm:py-4 border-2 border-[#163159] text-[#163159] rounded-full font-semibold hover:bg-[#163159] hover:text-white active:scale-95 transition-all duration-300 text-center touch-manipulation text-sm sm:text-base min-h-[48px] flex items-center justify-center">
                   {t.nav.about}
                 </a>
               </div>
             </div>
+            
+            {/* Video - Mobile (below heading) */}
+            <div className="relative w-full flex items-start justify-center mt-4">
+              <div className="relative h-[400px] xs:h-[450px] sm:h-[520px] w-full">
+                <video 
+                  ref={videoRef}
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover"
+                  style={{
+                    maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
+                  }}
+                  onLoadedData={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    video.play().catch(() => {
+                      video.muted = true;
+                      video.play();
+                    });
+                  }}
+                >
+                  <source src="/heading2.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="hero-video-overlay"></div>
+              </div>
+            </div>
           </div>
-          
-          {/* Right Column - Video */}
-          <div className="relative order-1 lg:order-2 mt-0 flex items-start justify-center lg:-mt-12">
-            <div className="relative h-[400px] xs:h-[450px] sm:h-[520px] md:h-[600px] lg:h-[680px] xl:h-[760px] w-full">
-              <video 
-                ref={videoRef}
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                preload="auto"
-                className="w-full h-full object-cover"
-                style={{
-                  maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
-                }}
-                onLoadedData={(e) => {
-                  const video = e.target as HTMLVideoElement;
-                  video.play().catch(() => {
-                    // Fallback for autoplay restrictions
-                    video.muted = true;
-                    video.play();
-                  });
-                }}
-              >
-                <source src="/heading2.mov" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              {/* White overlay to cover orange stripe */}
-              <div className="hero-video-overlay"></div>
+
+          {/* Desktop Layout: Side by Side */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            {/* Left Column - Text */}
+            <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-fade-in-up text-left">
+                <h1 className="font-extrabold leading-[1.2] pb-2">
+                  <span className="block text-7xl xl:text-8xl mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                    {t.hero.title1}
+                  </span>
+                  <span className="block text-6xl xl:text-7xl bg-gradient-to-r from-[#163159] via-[#1e4173] to-[#163159] bg-clip-text text-transparent">
+                    {t.hero.title2}
+                  </span>
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+                  {t.hero.description}
+                </p>
+                <div className="flex gap-4 pt-2">
+                  <a href="#contact" className="px-8 py-4 bg-[#163159] text-white rounded-full font-semibold hover:shadow-2xl active:scale-95 transition-all duration-300 text-center hover:bg-[#0f2340] touch-manipulation text-base min-h-[48px] flex items-center justify-center">
+                    {t.hero.getStarted}
+                  </a>
+                  <a href="/about" className="px-8 py-4 border-2 border-[#163159] text-[#163159] rounded-full font-semibold hover:bg-[#163159] hover:text-white active:scale-95 transition-all duration-300 text-center touch-manipulation text-base min-h-[48px] flex items-center justify-center">
+                    {t.nav.about}
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Video */}
+            <div className="relative mt-0 flex items-start justify-center lg:-mt-12">
+              <div className="relative h-[680px] xl:h-[760px] w-full">
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover"
+                  style={{
+                    maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
+                  }}
+                  onLoadedData={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    video.play().catch(() => {
+                      video.muted = true;
+                      video.play();
+                    });
+                  }}
+                >
+                  <source src="/heading2.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="hero-video-overlay"></div>
+              </div>
             </div>
           </div>
         </div>
