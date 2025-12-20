@@ -96,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <head>
-        <link rel="preload" href="/dadaadad.mov" as="video" type="video/mp4" />
+        <link rel="preload" href="/heading2.mov" as="video" type="video/mp4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#163159" />
         <meta name="google-site-verification" content="your-google-verification-code" />

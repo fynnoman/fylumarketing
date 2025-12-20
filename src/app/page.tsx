@@ -22,8 +22,8 @@ export default function Home() {
       contact: 'Kontakt'
     },
     hero: {
-      title1: 'Professionelles Webdesign',
-      title2: 'Für Ihren digitalen Erfolg',
+      title1: 'Modernes Webdesign',
+      title2: 'für Ihren digitalen Erfolg',
       description: 'Wir gestalten moderne, performante Websites, die Ihre Marke perfekt präsentieren und Ihre Besucher begeistern.',
       getStarted: 'Jetzt starten',
       ourServices: 'Unsere Leistungen'
@@ -264,18 +264,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-6 pt-32 sm:pt-36 lg:pt-40 pb-8 sm:pb-12" itemScope itemType="https://schema.org/WebPageElement">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 w-full">
+      <section className="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-6 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12" itemScope itemType="https://schema.org/WebPageElement">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 w-full items-center">
           {/* Left Column - Text Only */}
           <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6 order-2 lg:order-1">
             {/* Hero Text */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-fade-in-up text-center lg:text-left px-2 sm:px-0">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent animate-gradient">
+              <h1 className="font-extrabold leading-[1.2] pb-2">
+                <span className="block text-4xl xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                   {t.hero.title1}
                 </span>
-                <br />
-                <span className="text-gray-800">{t.hero.title2}</span>
+                <span className="block text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-[#163159] via-[#1e4173] to-[#163159] bg-clip-text text-transparent">
+                  {t.hero.title2}
+                </span>
               </h1>
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 {t.hero.description}
@@ -292,8 +293,8 @@ export default function Home() {
           </div>
           
           {/* Right Column - Video */}
-          <div className="relative order-1 lg:order-2 mt-0 lg:mt-0 flex items-center justify-center">
-            <div className="relative h-[200px] xs:h-[220px] sm:h-[260px] md:h-[300px] lg:h-[359px] xl:h-[399px] w-full">
+          <div className="relative order-1 lg:order-2 mt-0 flex items-start justify-center lg:-mt-12">
+            <div className="relative h-[400px] xs:h-[450px] sm:h-[520px] md:h-[600px] lg:h-[680px] xl:h-[760px] w-full">
               <video 
                 ref={videoRef}
                 autoPlay 
@@ -315,9 +316,11 @@ export default function Home() {
                   });
                 }}
               >
-                <source src="/dadaadad.mov" type="video/mp4" />
+                <source src="/heading2.mov" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              {/* White overlay to cover orange stripe */}
+              <div className="absolute top-0 right-0 w-[138px] h-full bg-white z-10"></div>
             </div>
           </div>
         </div>
@@ -367,17 +370,9 @@ export default function Home() {
               {t.latestArtworks.title}
             </h3>
             
-            {/* 3D Overlapping Video Cards - Responsive sizing */}
-            <div className="flex flex-col items-center gap-0 w-full max-w-md lg:max-w-none">
-              {/* First Card - Bildschirmaufnahme */}
-              <div 
-                onClick={handleVideoCardClick}
-                className={`relative w-[260px] h-[175px] xs:w-[280px] xs:h-[190px] sm:w-[340px] sm:h-[230px] md:w-[380px] md:h-[255px] lg:w-[460px] lg:h-[300px] xl:w-[560px] xl:h-[340px] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.4)] sm:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.6)] sm:hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 active:scale-105 sm:hover:scale-105 cursor-pointer touch-manipulation ${
-                  videoCardsSwapped 
-                    ? 'rotate-[6deg] sm:rotate-[8deg] active:rotate-[3deg] sm:hover:rotate-[4deg] -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-20 xl:-mt-24 z-0' 
-                    : 'rotate-[-6deg] sm:rotate-[-8deg] active:rotate-[-3deg] sm:hover:rotate-[-4deg] z-10'
-                }`}
-              >
+            {/* Single Video Display */}
+            <div className="w-full max-w-md lg:max-w-none">
+              <div className="relative w-full rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.4)] sm:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
                 <video 
                   autoPlay 
                   loop 
@@ -393,35 +388,7 @@ export default function Home() {
                     });
                   }}
                 >
-                  <source src="/Bildschirmaufnahme 2025-12-06 um 20.37.38.mov" type="video/mp4" />
-                </video>
-              </div>
-              
-              {/* Second Card - video.mp4 */}
-              <div 
-                onClick={handleVideoCardClick}
-                className={`relative w-[260px] h-[175px] xs:w-[280px] xs:h-[190px] sm:w-[340px] sm:h-[230px] md:w-[380px] md:h-[255px] lg:w-[460px] lg:h-[300px] xl:w-[560px] xl:h-[340px] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.4)] sm:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.6)] sm:hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] transform transition-all duration-500 active:scale-105 sm:hover:scale-105 cursor-pointer touch-manipulation ${
-                  videoCardsSwapped 
-                    ? 'rotate-[-6deg] sm:rotate-[-8deg] active:rotate-[-3deg] sm:hover:rotate-[-4deg] z-10' 
-                    : 'rotate-[6deg] sm:rotate-[8deg] active:rotate-[3deg] sm:hover:rotate-[4deg] -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-20 xl:-mt-24 z-0'
-                }`}
-              >
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover"
-                  onLoadedData={(e) => {
-                    const video = e.target as HTMLVideoElement;
-                    video.play().catch(() => {
-                      video.muted = true;
-                      video.play();
-                    });
-                  }}
-                >
-                  <source src="/video.mp4" type="video/mp4" />
+                  <source src="/varsmac.mov" type="video/mp4" />
                 </video>
               </div>
             </div>

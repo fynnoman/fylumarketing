@@ -56,8 +56,8 @@ export default function AboutPage() {
         description: 'Ich bin Fynn Schulz, ein leidenschaftlicher Webdesigner, der sich der Transformation von Marken durch innovative digitale Lösungen verschrieben hat.'
       },
       stats: [
-        { number: "500+", label: "Abgeschlossene Projekte", gradient: "from-gray-700 to-gray-900" },
-        { number: "200+", label: "Zufriedene Kunden", gradient: "from-gray-600 to-gray-800" },
+        { number: "200+", label: "Abgeschlossene Projekte", gradient: "from-gray-700 to-gray-900" },
+        { number: "50+", label: "Zufriedene Kunden", gradient: "from-gray-600 to-gray-800" },
         { number: "24/7", label: "Support Verfügbar", gradient: "from-gray-800 to-black" }
       ],
       story: {
