@@ -370,27 +370,47 @@ export default function Home() {
               {t.latestArtworks.title}
             </h3>
             
-            {/* Single Video Display */}
-            <div className="w-full max-w-md lg:max-w-none">
-              <div className="relative w-full rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.4)] sm:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover"
-                  onLoadedData={(e) => {
-                    const video = e.target as HTMLVideoElement;
+            {/* Video blending into background */}
+            <div className="w-full max-w-2xl lg:max-w-none relative">
+              <video 
+                autoPlay 
+                muted 
+                playsInline
+                preload="auto"
+                className="w-full h-auto object-cover opacity-90"
+                onLoadedData={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.play().catch(() => {
+                    video.muted = true;
+                    video.play();
+                  });
+                }}
+                onEnded={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  setTimeout(() => {
+                    video.currentTime = 0;
                     video.play().catch(() => {
                       video.muted = true;
                       video.play();
                     });
-                  }}
-                >
-                  <source src="/varsmac.mov" type="video/mp4" />
-                </video>
-              </div>
+                  }, 10000); // 10 seconds delay
+                }}
+              >
+                <source src="/varsmac.mov" type="video/mp4" />
+              </video>
+              {/* White overlay to cover watermark */}
+              <div className="absolute top-0 right-0 w-[120px] h-full bg-white z-10"></div>
+            </div>
+
+            {/* Image below video */}
+            <div className="w-full max-w-sm lg:max-w-md mt-8 sm:mt-10 lg:mt-12">
+              <Image 
+                src="/1E7120C2-2C24-4154-B7EF-6D17C34844F1.png" 
+                alt="Project showcase"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover opacity-90"
+              />
             </div>
           </div>
         </div>
