@@ -504,7 +504,7 @@ export default function Home() {
       </section>
 
       {/* Happy Clients Section */}
-      <section className="py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-6 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 lg:mb-4 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
@@ -538,7 +538,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} id="contact" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-6 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
+      <section ref={ctaRef} id="contact" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent px-4">{t.cta.title}</h3>
           <p className="text-sm sm:text-base lg:text-xl mb-5 sm:mb-6 lg:mb-8 text-gray-700 px-4 max-w-2xl mx-auto leading-relaxed">
