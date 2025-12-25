@@ -39,8 +39,6 @@ export default function ShaderBackground() {
             animate='on'
             type='waterPlane'
             shader='defaults'
-            bgColor1='#000000'
-            bgColor2='#000000'
             color1='#5964ff'
             color2='#68d9fe'
             color3='#fcf9fb'
