@@ -300,7 +300,7 @@ export default function Home() {
                   loop 
                   muted 
                   playsInline
-                  preload="auto"
+                  preload="none"
                   webkit-playsinline="true"
                   x5-playsinline="true"
                   className="w-full h-full object-cover"
@@ -368,7 +368,7 @@ export default function Home() {
                   loop 
                   muted 
                   playsInline
-                  preload="auto"
+                  preload="none"
                   className="w-full h-full object-cover"
                   style={{
                     maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
@@ -442,7 +442,7 @@ export default function Home() {
                 autoPlay 
                 muted 
                 playsInline
-                preload="auto"
+                preload="none"
                 className="w-full h-auto object-cover opacity-90"
                 onLoadedData={(e) => {
                   const video = e.target as HTMLVideoElement;
@@ -474,7 +474,7 @@ export default function Home() {
                 autoPlay 
                 muted 
                 playsInline
-                preload="auto"
+                preload="none"
                 className="w-full h-auto object-cover opacity-90"
                 onLoadedData={(e) => {
                   const video = e.target as HTMLVideoElement;
